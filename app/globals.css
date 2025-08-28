@@ -1,42 +1,185 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer reset {
+	/* Box sizing rules */
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	/* Prevent font size inflation */
+	html {
+		-moz-text-size-adjust: none;
+		-webkit-text-size-adjust: none;
+		text-size-adjust: none;
+		interpolate-size: allow-keywords;
+	}
+
+	/* Remove default margin in favour of better control in authored CSS */
+	body,
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	figure,
+	blockquote,
+	dl,
+	dd {
+		margin-block-end: 0;
+	}
+
+	/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+	ul,
+	ol {
+		list-style: none;
+	}
+
+	/* Set core body defaults */
+	body {
+		min-height: 100vh;
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased; /* improve text rendering */
+	}
+
+	/* Set shorter line heights on headings and interactive elements */
+	h1,
+	h2,
+	h3,
+	h4,
+	button,
+	input,
+	label {
+		line-height: 1.1;
+	}
+
+	/* Balance text wrapping on headings */
+	h1,
+	h2,
+	h3,
+	h4 {
+		text-wrap: balance;
+	}
+
+	/* Text wrap pretty */
+	p {
+		text-wrap: pretty;
+	}
+
+	/* Avoid text overflow */
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		overflow-wrap: break-word;
+	}
+
+	/* A elements that don't have a class get default styles */
+	a:not([class]) {
+		text-decoration-skip-ink: auto;
+		color: currentColor;
+	}
+
+	/* Make images easier to work with */
+	img,
+	picture {
+		max-width: 100%;
+		display: block;
+	}
+
+	/* Inherit fonts for inputs and buttons */
+	input,
+	button,
+	textarea,
+	select {
+		font-family: inherit;
+		font-size: inherit;
+	}
+
+	/* Make sure textareas without a rows attribute are not tiny */
+	textarea:not([rows]) {
+		min-height: 10em;
+	}
+
+	/* Anything that has been anchored to should have extra scroll margin */
+	:target {
+		scroll-margin-block: 5ex;
+	}
+
+	#root,
+	#__next {
+		isolation: isolate;
+	}
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@layer base {
+	:root {
+		--background: #000000;
+		--foreground: #00ff88;
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+		--terminal-green: #00ff88;
+		--terminal-dark-green: #00b359;
+		--terminal-bright-green: #4dffb3;
+		--terminal-dim-green: #66b366;
+		--terminal-gray: #333333;
+		--terminal-light-gray: #4d4d4d;
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+		--card: #0d0d0d;
+		--card-foreground: #00ff88;
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+		--popover: #141414;
+		--popover-foreground: #00ff88;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+		--primary: #00ff88;
+		--primary-foreground: #000000;
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+		--secondary: #1a1a1a;
+		--secondary-foreground: #00ff88;
+
+		--muted: #262626;
+		--muted-foreground: #66b366;
+
+		--accent: #00b359;
+		--accent-foreground: #e6ffe6;
+
+		--destructive: #ff4040;
+		--destructive-foreground: #ffffff;
+
+		--border: #4d6653;
+		--input: #141414;
+		--ring: #00ff88;
+
+		--radius: 0rem; /* No rounded corners for retro aesthetic */
+
+		/* CRT glow effects */
+		--glow-primary: 0 0 10px rgba(0, 255, 136, 0.5), 0 0 20px rgba(0, 255, 136, 0.3),
+			0 0 30px rgba(0, 255, 136, 0.1);
+		--glow-secondary: 0 0 5px rgba(0, 255, 136, 0.3);
+	}
+
+	html {
+		font-family: var(--font-jetbrains-mono), Monaco, Menlo, 'Ubuntu Mono', monospace;
+	}
+
+	body {
+		background-color: var(--background);
+		color: var(--terminal-green);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: var(--terminal-green);
+	}
+
+	p {
+		color: var(--terminal-dark-green);
+	}
 }
