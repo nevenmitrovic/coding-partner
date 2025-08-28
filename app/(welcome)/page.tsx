@@ -2,9 +2,18 @@ import styles from './page.module.css'
 
 export default function Home() {
 	return (
-		<div>
-			<h1>This is Welcome Page</h1>
-			<p>In progress...</p>
-		</div>
+		<main id='page'>
+			<div className={styles.header}>
+				<h1>Coding Partner</h1>
+				<p>Find your hack partner</p>
+			</div>
+			<section id='section' className={styles.infoTerminal}>
+				<p>~/neven/hackathons $</p>
+				<h3>
+					{'>'} find_your_hack_partner{'()'}
+				</h3>
+				<p>// Find coding partners for hackathons and projects</p>
+			</section>
+		</main>
 	)
 }
