@@ -1,0 +1,16 @@
+.cardsSection {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.5rem;
+}
+.cardsSection div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--accent);
+	text-align: center;
+	gap: 1.5rem;
+	padding: 1.5rem;
+	background-color: var(--secondary);
+}
