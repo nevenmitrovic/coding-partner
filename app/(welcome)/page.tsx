@@ -11,7 +11,10 @@ export default function Home() {
 			<section id='section' className={styles.infoTerminal}>
 				<p>~/neven/hackathons $</p>
 				<h3>
-					{'>'} find_your_hack_partner{'()'} <BlinkingCursor />
+					<span className='typing-animation'>
+						{'>'} find_your_hack_partner{'()'}
+					</span>
+					<BlinkingCursor />
 				</h3>
 				<p>// Find coding partners for hackathons and projects</p>
 			</section>
