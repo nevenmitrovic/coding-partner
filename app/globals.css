@@ -223,6 +223,8 @@
 		align-items: center;
 		gap: 2rem;
 		padding-inline: 1rem;
+		width: 900px;
+		margin-inline: auto;
 	}
 	#section {
 		display: flex;
@@ -240,6 +242,19 @@
 		vertical-align: middle;
 		animation: blink-cursor 1s steps(1) infinite;
 	}
+	#button {
+		border: 1px solid var(--terminal-green);
+		padding: 1rem;
+		cursor: pointer;
+		background-color: inherit;
+		color: var(--terminal-green);
+	}
+	#button:hover {
+		box-shadow: var(--glow-primary);
+		background-color: var(--accent);
+		color: white;
+	}
+
 	.typing-animation {
 		width: 100%;
 		white-space: nowrap;
@@ -247,10 +262,9 @@
 		animation: typing 2s steps(23);
 	}
 
-	@media (width > 768px) {
+	@media (width < 768px) {
 		#page {
-			width: 700px;
-			margin-inline: auto;
+			width: 100%;
 		}
 	}
 

@@ -1,5 +1,6 @@
 import BlinkingCursor from '@/components/common/blinking-cursor'
 import styles from './page.module.css'
+import BrowseSection from '@/components/welcome/browse-section/browse-section'
 
 export default function Home() {
 	return (
@@ -18,6 +19,7 @@ export default function Home() {
 				</h3>
 				<p>// Find coding partners for hackathons and projects</p>
 			</section>
+			<BrowseSection />
 		</main>
 	)
 }
