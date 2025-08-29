@@ -1,0 +1,23 @@
+.welcomeFooter {
+	width: 100%;
+	border-top: 1px solid var(--terminal-green);
+	width: 70%;
+}
+.welcomeFooter div:first-child {
+	margin-top: 2px;
+	border-top: 1px solid var(--terminal-green);
+}
+.welcomeFooter div:last-child {
+	display: flex;
+	justify-content: center;
+	font-size: var(--text-main-sm);
+	padding-top: 1rem;
+}
+.welcomeFooter div:last-child p {
+	display: inline-block;
+	border-right: 1px solid var(--terminal-green);
+	padding-inline: 1rem;
+}
+.welcomeFooter div:last-child p:last-child {
+	border-right: none;
+}
