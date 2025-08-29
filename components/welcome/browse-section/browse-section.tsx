@@ -1,14 +1,13 @@
 'use client'
 
+import Link from 'next/link'
+
 import Button from '../../common/button'
 import styles from './browse-section.module.css'
 
 export default function BrowseSection() {
 	const handleStartMatching = () => {
 		console.log('start matching...')
-	}
-	const handleBrowseCoders = () => {
-		console.log('redirecting...')
 	}
 
 	return (
@@ -17,7 +16,9 @@ export default function BrowseSection() {
 			<p>Match based on skills, interests, and hackathon goals.</p>
 			<div className={styles.browseSectionControllers}>
 				<Button text={`> start_matching`} type='button' onClick={handleStartMatching} />
-				<Button text={`> browse_coders`} type='button' onClick={handleBrowseCoders} />
+				<Link href='/coders'>
+					<Button text={`> browse_coders`} type='button' />
+				</Link>
 			</div>
 		</section>
 	)
