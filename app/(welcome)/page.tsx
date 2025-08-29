@@ -4,10 +4,10 @@ import styles from './page.module.css'
 export default function Home() {
 	return (
 		<main id='page'>
-			<div className={styles.header}>
+			<header className={styles.header}>
 				<h1>Coding Partner</h1>
 				<p>Find your hack partner</p>
-			</div>
+			</header>
 			<section id='section' className={styles.infoTerminal}>
 				<p>~/neven/hackathons $</p>
 				<h3>
