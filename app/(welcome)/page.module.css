@@ -7,3 +7,6 @@
 	width: 100%;
 	box-shadow: var(--glow-primary);
 }
+.infoTerminal > h3 {
+	display: flex;
+}

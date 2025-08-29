@@ -231,11 +231,32 @@
 		align-items: start;
 		gap: 1rem;
 	}
+	#cursor::after {
+		content: '';
+		width: 0.5rem;
+		height: 1em;
+		background-color: var(--terminal-green);
+		display: inline-block;
+		vertical-align: middle;
+		animation: blink-cursor 1s steps(1) infinite;
+	}
 
 	@media (width > 768px) {
 		#page {
 			width: 700px;
 			margin-inline: auto;
+		}
+	}
+
+	@keyframes blink-cursor {
+		0% {
+			opacity: 0;
+		}
+		50% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
 		}
 	}
 }
