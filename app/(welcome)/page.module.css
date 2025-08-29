@@ -5,9 +5,9 @@
 	justify-content: center;
 	align-items: center;
 	gap: 2rem;
-	padding-inline: 1rem;
-	width: 900px;
+	padding: 1rem;
 	margin-inline: auto;
+	width: 900px;
 }
 
 @media (width < 768px) {
