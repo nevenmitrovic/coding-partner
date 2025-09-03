@@ -1,0 +1,46 @@
+@media (width < 769px) {
+	.mobileNavigation {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: var(--background);
+		z-index: 1000;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transform: translateX(-100%);
+		transition: transform 1s ease-in-out;
+	}
+
+	.mobileNavigation.open {
+		transform: translateX(0);
+	}
+
+	.closeButton {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		background: none;
+		border: none;
+		color: var(--terminal-dark-green);
+		font-size: 24px;
+		cursor: pointer;
+		padding: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.mobileNavigation > ul {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 32px;
+		padding: 20px;
+		list-style: none;
+		margin: 0;
+	}
+}

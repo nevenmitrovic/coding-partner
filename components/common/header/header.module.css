@@ -16,3 +16,16 @@
 	align-items: center;
 	gap: 2px;
 }
+
+@media (width < 769px) {
+	.headerContainer > header {
+		max-width: 100%;
+		padding: 16px 24px;
+	}
+	.headerContainer button {
+		border: none;
+		color: var(--terminal-dark-green);
+		background-color: inherit;
+		display: flex;
+	}
+}

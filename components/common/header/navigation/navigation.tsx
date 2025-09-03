@@ -1,4 +1,4 @@
-import NavLink from './nav-link/nav-link'
+import NavLink from '@/components/common/header/common/nav-link/nav-link'
 import styles from './navigation.module.css'
 import { NAVIGATION } from '@/constants'
 

@@ -1,18 +1,17 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useState, useLayoutEffect } from 'react'
+import useWindowSize from './useWindowSize'
 
-export const useIsMobile = (breakpoint = 768) => {
-	const [isMobile, setIsMobile] = useState(() => window.innerWidth < breakpoint)
+export function useIsMobile(breakpoint = 768) {
+	const { width } = useWindowSize()
+	const [isMobile, setMobile] = useState<null | boolean>(null)
 
-	const checkDevice = useCallback(() => {
-		setIsMobile(window.innerWidth < breakpoint)
-	}, [breakpoint])
-
-	useEffect(() => {
-		window.addEventListener('resize', checkDevice)
-		return () => window.removeEventListener('resize', checkDevice)
-	}, [checkDevice])
+	useLayoutEffect(() => {
+		if (width !== null) {
+			setMobile(width <= breakpoint)
+		}
+	}, [width, breakpoint])
 
 	return isMobile
 }

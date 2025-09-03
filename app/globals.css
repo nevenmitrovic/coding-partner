@@ -251,7 +251,7 @@
 		animation: typing 2s ease-out;
 	}
 
-	@media (width < 768px) {
+	@media (width < 769px) {
 		#page {
 			width: 100%;
 		}
