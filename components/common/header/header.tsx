@@ -3,9 +3,11 @@ import Navigation from './navigation/navigation'
 
 export default function Header() {
 	return (
-		<div>
+		<div className={styles.headerContainer}>
 			<header>
-				<div className={styles.logo}>$ Coding_Partner</div>
+				<div id='cursor' className={`${styles.logo} typing-animation`}>
+					$ Coding_Partner
+				</div>
 				<Navigation />
 			</header>
 		</div>

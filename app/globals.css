@@ -248,7 +248,7 @@
 		width: 100%;
 		white-space: nowrap;
 		overflow: hidden;
-		animation: typing 2s steps(23);
+		animation: typing 2s ease-out;
 	}
 
 	@media (width < 768px) {

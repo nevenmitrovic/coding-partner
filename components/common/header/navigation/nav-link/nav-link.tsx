@@ -11,7 +11,7 @@ export default function NavLink({ href, label }: INavLink) {
 
 	return (
 		<li>
-			<Link href={href} className={path === label.toLowerCase() ? styles.active : styles.inactive}>
+			<Link href={href} className={path.startsWith(href) ? styles.active : styles.inactive}>
 				{label}
 			</Link>
 		</li>

@@ -3,18 +3,18 @@ import { INavLink } from '@/types'
 export const NAVIGATION: INavLink[] = [
 	{
 		href: '/coders',
-		label: 'Coders',
+		label: '[Coders]',
 	},
 	{
 		href: '/login',
-		label: 'Login',
+		label: '[Login]',
 	},
 	{
 		href: '/profile',
-		label: 'Profile',
+		label: '[Profile]',
 	},
 	{
 		href: '/teams',
-		label: 'Teams',
+		label: '[Teams]',
 	},
 ]

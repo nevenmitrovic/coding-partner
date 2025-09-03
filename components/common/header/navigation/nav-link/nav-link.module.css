@@ -1,5 +1,5 @@
 .active {
-	color: var(--terminal-green);
+	color: var(--terminal-bright-green);
 }
 .inactive {
 	color: var(--terminal-dark-green);
@@ -7,4 +7,5 @@
 .active,
 .inactive {
 	font-size: var(--text-main-regular);
+	text-decoration: none;
 }

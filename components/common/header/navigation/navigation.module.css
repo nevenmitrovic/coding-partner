@@ -1,0 +1,7 @@
+.navigation {
+	margin-block: auto;
+}
+.navigation > ul {
+	display: flex;
+	gap: 64px;
+}

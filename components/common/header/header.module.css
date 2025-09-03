@@ -1,0 +1,15 @@
+.headerContainer {
+	border-bottom: 1px solid var(--accent);
+	box-shadow: var(--glow-secondary);
+}
+.headerContainer > header {
+	max-width: 1280px;
+	display: flex;
+	justify-content: space-between;
+	padding: 16px 48px;
+	margin-inline: auto;
+}
+.logo {
+	font-size: var(--text-main-xl);
+	color: var(--terminal-dark-green);
+}
