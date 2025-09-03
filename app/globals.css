@@ -43,17 +43,6 @@
 		-webkit-font-smoothing: antialiased; /* improve text rendering */
 	}
 
-	/* Set shorter line heights on headings and interactive elements */
-	h1,
-	h2,
-	h3,
-	h4,
-	button,
-	input,
-	label {
-		line-height: 1.1;
-	}
-
 	/* Balance text wrapping on headings */
 	h1,
 	h2,
@@ -161,22 +150,22 @@
 		--glow-secondary: 0 0 5px rgba(0, 255, 136, 0.3);
 
 		/* Font sizes */
-		--text-header-sm: 1.5rem;
-		--text-header-regular: 2rem;
-		--text-header-xl: 2.5rem;
+		--text-header-sm: 2rem;
+		--text-header-regular: 2.5rem;
+		--text-header-xl: 3rem;
 
-		--text-main-sm: 0.5rem;
-		--text-main-regular: 0.8rem;
-		--text-main-xl: 1.2rem;
+		--text-main-sm: 0.8rem;
+		--text-main-regular: 1rem;
+		--text-main-xl: 1.5rem;
 
-		@media (width > 768px) {
-			--text-header-sm: 2rem;
-			--text-header-regular: 2.5rem;
-			--text-header-xl: 3rem;
+		@media (width < 768px) {
+			--text-header-sm: 1.5rem;
+			--text-header-regular: 2rem;
+			--text-header-xl: 2.5rem;
 
-			--text-main-sm: 0.8rem;
-			--text-main-regular: 1rem;
-			--text-main-xl: 1.5rem;
+			--text-main-sm: 0.5rem;
+			--text-main-regular: 0.8rem;
+			--text-main-xl: 1.2rem;
 		}
 	}
 
