@@ -1,0 +1,10 @@
+.active {
+	color: var(--terminal-green);
+}
+.inactive {
+	color: var(--terminal-dark-green);
+}
+.active,
+.inactive {
+	font-size: var(--text-main-regular);
+}
