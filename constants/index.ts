@@ -6,15 +6,15 @@ export const NAVIGATION: INavLink[] = [
 		label: '[Coders]',
 	},
 	{
-		href: '/login',
-		label: '[Login]',
+		href: '/teams',
+		label: '[Teams]',
 	},
 	{
 		href: '/profile',
 		label: '[Profile]',
 	},
 	{
-		href: '/teams',
-		label: '[Teams]',
+		href: '/login',
+		label: '[Login]',
 	},
 ]

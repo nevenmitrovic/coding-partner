@@ -6,7 +6,7 @@ import { useIsMobile } from '@/hooks/useIsMobile'
 import { useIsHydrated } from '@/hooks/useIsHydrated'
 import styles from './header.module.css'
 import Navigation from './navigation/navigation'
-import BlinkingCursor from '@/components/common/blinking-cursor'
+import BlinkingCursor from '@/components/common/ui/blinking-cursor'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import MobileNavigation from './mobile-navigation/mobile-navigation'
 

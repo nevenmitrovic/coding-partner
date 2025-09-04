@@ -1,4 +1,4 @@
-import BlinkingCursor from '@/components/common/blinking-cursor'
+import BlinkingCursor from '@/components/common/ui/blinking-cursor'
 import styles from './info-terminal.module.css'
 
 export default function InfoTerminal() {

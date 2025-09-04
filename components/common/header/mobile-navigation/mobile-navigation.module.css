@@ -12,7 +12,13 @@
 		align-items: center;
 		justify-content: center;
 		transform: translateX(-100%);
-		transition: transform 1s ease-in-out;
+		transition: transform 500ms ease-in-out;
+	}
+
+	.mobileNavigation > .logo {
+		display: flex;
+		gap: 4px;
+		font-size: var(--text-header-sm);
 	}
 
 	.mobileNavigation.open {

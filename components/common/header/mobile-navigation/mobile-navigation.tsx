@@ -2,6 +2,7 @@ import styles from './mobile-navigation.module.css'
 import { NAVIGATION } from '@/constants/index'
 import NavLink from '@/components/common/header/common/nav-link/nav-link'
 import { RxCross1 } from 'react-icons/rx'
+import BlinkingCursor from '@/components/common/ui/blinking-cursor'
 
 interface MobileNavigationProps {
 	isOpen: boolean
@@ -14,9 +15,13 @@ export const MobileNavigation = ({ isOpen, onClose }: MobileNavigationProps) => 
 			<button className={styles.closeButton} onClick={onClose}>
 				<RxCross1 size={24} />
 			</button>
+			<div className={styles.logo}>
+				$ Coding_Partner
+				<BlinkingCursor />
+			</div>
 			<ul>
 				{NAVIGATION.map((item) => (
-					<NavLink key={item.label} {...item} />
+					<NavLink key={item.label} {...item} onClose={onClose} />
 				))}
 			</ul>
 		</nav>

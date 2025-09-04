@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-import Button from '../../common/button'
+import Button from '../../common/ui/button'
 import styles from './browse-section.module.css'
 
 export default function BrowseSection() {
