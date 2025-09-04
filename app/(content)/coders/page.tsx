@@ -1,10 +1,10 @@
 import styles from './page.module.css'
+import CodersHeader from '@/components/content/coders/header/coders-header'
 
 export default function Home() {
 	return (
-		<div>
-			<h1>This is Coders Page</h1>
-			<p>In progress...</p>
-		</div>
+		<main className={styles.codersContent}>
+			<CodersHeader />
+		</main>
 	)
 }

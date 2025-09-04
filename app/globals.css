@@ -204,6 +204,7 @@
 }
 
 @layer utilities {
+	/* WELCOME PAGE */
 	#page {
 		min-height: 100vh;
 		display: flex;
@@ -222,6 +223,8 @@
 		align-items: start;
 		gap: 1rem;
 	}
+
+	/* OTHER GLOBALS */
 	#cursor::after {
 		content: '';
 		width: 0.5rem;
@@ -242,6 +245,22 @@
 		box-shadow: var(--glow-primary);
 		background-color: var(--accent);
 		color: white;
+	}
+	#input {
+		padding: 8px 12px;
+		border: 1px solid var(--border);
+		outline: none;
+		background-color: var(--terminal-gray);
+		color: var(--terminal-dim-green);
+	}
+	#input:focus {
+		outline: 2px solid var(--terminal-dim-green);
+	}
+	#input::placeholder {
+		color: var(--terminal-dim-green);
+	}
+	.inputContainer {
+		width: 100%;
 	}
 
 	.typing-animation {

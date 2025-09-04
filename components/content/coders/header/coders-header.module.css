@@ -1,0 +1,8 @@
+.codersHeader {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.codersHeader > div:first-of-type {
+	width: 450px;
+}
