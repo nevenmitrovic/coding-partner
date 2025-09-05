@@ -1,0 +1,17 @@
+.interestsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	font-size: var(--text-main-regular);
+	color: var(--terminal-dark-green);
+	padding-bottom: 6px;
+}
+.interestsContainer h4 {
+	font-size: var(--text-main-regular) !important;
+}
+.interestsContainer ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	font-size: 14px;
+}
