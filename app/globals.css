@@ -237,6 +237,7 @@
 		animation: blink-cursor 1s steps(1) infinite;
 	}
 	#button {
+		width: 100%;
 		border: 1px solid var(--terminal-green);
 		padding: 1rem;
 		cursor: pointer;
@@ -245,8 +246,9 @@
 	}
 	#button:hover {
 		box-shadow: var(--glow-primary);
+		border: none;
 		background-color: var(--accent);
-		color: white;
+		color: var(--background);
 	}
 	#input {
 		padding: 8px 12px;

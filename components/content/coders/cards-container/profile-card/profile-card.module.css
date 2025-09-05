@@ -60,6 +60,8 @@
 	align-items: center;
 	font-size: var(--text-main-sm);
 	gap: 8px;
+	padding-top: 18px;
+	border-top: 1px solid var(--terminal-gray);
 }
 .profileStatus div {
 	border-radius: 50%;
@@ -68,6 +70,9 @@
 	background-color: var(--terminal-dark-green);
 	animation: status-blinking 1.5s infinite;
 	box-shadow: var(--glow-secondary);
+}
+.profileCard button {
+	text-align: left;
 }
 
 @keyframes status-blinking {
