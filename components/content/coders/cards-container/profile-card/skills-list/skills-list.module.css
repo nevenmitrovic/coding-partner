@@ -1,0 +1,20 @@
+.skillsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	font-size: var(--text-main-sm);
+	color: var(--terminal-dark-green);
+}
+.skillsContainer h4 {
+	font-size: var(--text-main-regular);
+}
+.skillsContainer ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+.skillsContainer li {
+	padding: 6px;
+	border: 1px solid var(--border);
+	box-shadow: var(--glow-secondary);
+}

@@ -8,7 +8,7 @@ interface SkillsListProps {
 
 export default memo(function SkillsList({ list }: SkillsListProps) {
 	return (
-		<div>
+		<div className={styles.skillsContainer}>
 			<h4>$ skills.list{'()'}:</h4>
 			<ul>
 				{list.map((item) => (

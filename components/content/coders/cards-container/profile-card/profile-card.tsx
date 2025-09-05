@@ -20,7 +20,19 @@ export default function ProfileCard() {
 				</div>
 			</header>
 			<div className={styles.profileInfo}>
-				<SkillsList list={['React', 'JavaScript', 'Angular', 'Vue', 'NodeJS', 'TailwindCSS']} />
+				<SkillsList
+					list={[
+						'React',
+						'JavaScript',
+						'Angular',
+						'Vue',
+						'NodeJS',
+						'TailwindCSS',
+						'digital ocean',
+						'aws',
+						'docker',
+					]}
+				/>
 				<InterestsList list={['Web Development', 'UI/UX', 'Mobile Development']} />
 				<Link href={getWatsAppMe('+381656196083')}>
 					<Button text='> WatsApp' type='button' />
