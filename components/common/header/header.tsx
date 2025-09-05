@@ -6,6 +6,7 @@ import { useIsMobile } from '@/hooks/useIsMobile'
 import styles from './header.module.css'
 import Navigation from './navigation/navigation'
 import BlinkingCursor from '@/components/common/ui/blinking-cursor'
+import ClientOnly from '@/components/common/client-only/client-only'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import MobileNavigation from './mobile-navigation/mobile-navigation'
 
@@ -22,13 +23,15 @@ export default function Header() {
 					$ Coding_Partner
 					<BlinkingCursor />
 				</div>
-				{!isMobile && <Navigation />}
-				{isMobile && (
-					<button onClick={toggleMobileMenu}>
-						<RxHamburgerMenu size={25} />
-					</button>
-				)}
-				{isMobile && <MobileNavigation isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />}
+				<ClientOnly>
+					{!isMobile && <Navigation />}
+					{isMobile && (
+						<button onClick={toggleMobileMenu}>
+							<RxHamburgerMenu size={25} />
+						</button>
+					)}
+					{isMobile && <MobileNavigation isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />}
+				</ClientOnly>
 			</header>
 		</div>
 	)
