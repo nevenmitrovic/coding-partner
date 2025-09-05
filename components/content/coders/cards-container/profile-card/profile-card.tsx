@@ -20,17 +20,14 @@ export default function ProfileCard() {
 				</div>
 			</header>
 			<div className={styles.profileInfo}>
-				<div>
-					<SkillsList list={['React', 'JavaScript', 'Angular', 'Vue', 'NodeJS', 'TailwindCSS']} />
-				</div>
-				<div>
-					<InterestsList list={['Web Development', 'UI/UX', 'Mobile Development']} />
-				</div>
+				<SkillsList list={['React', 'JavaScript', 'Angular', 'Vue', 'NodeJS', 'TailwindCSS']} />
+				<InterestsList list={['Web Development', 'UI/UX', 'Mobile Development']} />
 				<Link href={getWatsAppMe('+381656196083')}>
 					<Button text='> WatsApp' type='button' />
 				</Link>
 			</div>
 			<div className={styles.profileStatus}>
+				<div />
 				<p>STATUS: ONLINE</p>
 			</div>
 		</div>

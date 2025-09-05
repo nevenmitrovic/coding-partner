@@ -8,13 +8,13 @@ interface InterestsListProps {
 
 export default memo(function InterestsList({ list }: InterestsListProps) {
 	return (
-		<>
+		<div>
 			<h4>$ interests:</h4>
 			<ul>
 				{list.map((item, index) => (
 					<li key={item}>{item + (index !== item.length - 1 ? ', ' : '')}</li>
 				))}
 			</ul>
-		</>
+		</div>
 	)
 })
