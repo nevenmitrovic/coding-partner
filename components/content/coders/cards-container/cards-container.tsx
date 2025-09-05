@@ -3,7 +3,7 @@ import ProfileCard from './profile-card/profile-card'
 
 export default function CardsContainer() {
 	return (
-		<section className={styles.CardsContainer}>
+		<section className={styles.cardsContainer}>
 			<ProfileCard />
 			<ProfileCard />
 			<ProfileCard />

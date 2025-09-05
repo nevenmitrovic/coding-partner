@@ -11,7 +11,7 @@ export default function ProfileCard() {
 		<div className={styles.profileCard}>
 			<header>
 				<div>
-					<h3>Neven Mitrovic</h3>
+					<h4>Neven Mitrovic</h4>
 					<p>#331</p>
 				</div>
 				<div>

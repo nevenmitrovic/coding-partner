@@ -1,0 +1,56 @@
+.profileCard {
+	display: flex;
+	flex-direction: column;
+	padding: 18px;
+	gap: 18px;
+	border: 1px solid var(--card-foreground);
+	background-color: var(--card);
+	box-shadow: var(--glow-secondary);
+	transform: translateY(0);
+	transition: box-shadow 300ms ease-in-out, transform 300ms ease-in-out;
+}
+.profileCard:hover {
+	box-shadow: var(--glow-primary);
+	transform: translateY(-3px);
+}
+.profileCard > header {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+.profileCard > header::after {
+	content: '';
+	width: 150px;
+	border-bottom: 1px solid var(--card-foreground);
+	margin-inline: auto;
+	padding-top: 12px;
+}
+.profileCard h4 {
+	font-size: var(--text-main-lg);
+}
+.profileCard > header div:first-child {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.profileCard > header div:last-child {
+	display: flex;
+	gap: 4px;
+}
+.profileCard > header div:last-child p {
+	line-height: 1;
+	padding-right: 8px;
+	font-size: var(--text-main-sm);
+}
+.profileCard > header div:last-child p:first-of-type {
+	border-right: 1px solid var(--terminal-dark-green);
+}
+.profileCard > header div:last-child p:last-of-type {
+	padding-right: 0;
+	padding-left: 4px;
+}
+
+.profileInfo {
+}
+.profileStatus {
+}

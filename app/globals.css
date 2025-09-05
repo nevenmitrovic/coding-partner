@@ -156,6 +156,7 @@
 
 		--text-main-sm: 0.8rem;
 		--text-main-regular: 1rem;
+		--text-main-lg: 1.25rem;
 		--text-main-xl: 1.5rem;
 
 		@media (width < 768px) {
@@ -165,6 +166,7 @@
 
 			--text-main-sm: 0.5rem;
 			--text-main-regular: 0.8rem;
+			--text-main-lg: 1.125rem;
 			--text-main-xl: 1.2rem;
 		}
 	}
