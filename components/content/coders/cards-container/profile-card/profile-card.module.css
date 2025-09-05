@@ -56,4 +56,25 @@
 	gap: 12px;
 }
 .profileStatus {
+	display: flex;
+	align-items: center;
+	font-size: var(--text-main-sm);
+	gap: 8px;
+}
+.profileStatus div {
+	border-radius: 50%;
+	width: 12px;
+	height: 12px;
+	background-color: var(--terminal-dark-green);
+	animation: status-blinking 1.5s infinite;
+	box-shadow: var(--glow-secondary);
+}
+
+@keyframes status-blinking {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.75;
+	}
 }
