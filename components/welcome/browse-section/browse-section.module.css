@@ -10,6 +10,11 @@
 	gap: 1.5rem;
 	margin-inline: auto;
 }
+.browseSectionControllers > a {
+	display: flex;
+	text-decoration: none;
+	min-width: 187.61px;
+}
 
 @media (width < 768px) {
 	.browseSection > h4 {
