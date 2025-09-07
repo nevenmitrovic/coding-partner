@@ -1,0 +1,20 @@
+.codersFooter {
+	margin-inline: auto;
+	width: 440px;
+	border-top: 1px solid var(--terminal-green);
+	padding-top: 16px;
+	font-size: var(--text-main-sm);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.codersFooter > p {
+	line-height: 1;
+}
+.codersFooter > p:first-child {
+	padding-right: 8px;
+	border-right: 1px solid var(--terminal-gray);
+}
+.codersFooter > p:last-child {
+	padding-left: 8px;
+}
