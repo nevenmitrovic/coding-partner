@@ -3,3 +3,11 @@
 	grid-template-columns: repeat(3, 420px);
 	gap: 10px;
 }
+
+@media (width < 769px) {
+	.cardsContainer {
+		display: grid;
+		grid-template-columns: repeat(1, 100%);
+		gap: 16px;
+	}
+}
