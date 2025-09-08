@@ -15,3 +15,9 @@
 	gap: 8px;
 	font-size: 14px;
 }
+
+@media (width < 769px) {
+	.interestsContainer ul {
+		font-size: 10.8px;
+	}
+}
