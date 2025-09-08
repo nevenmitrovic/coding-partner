@@ -75,6 +75,19 @@
 	text-align: left;
 }
 
+@media (width < 769px) {
+	.profileCard {
+		padding: 12px;
+		gap: 12px;
+	}
+	.profileCard > header {
+		gap: 10px;
+	}
+	.profileCard > header::after {
+		padding-top: 10px;
+	}
+}
+
 @keyframes status-blinking {
 	0% {
 		opacity: 1;
