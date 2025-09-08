@@ -6,3 +6,13 @@
 	gap: 48px;
 	padding-block: 60px;
 }
+
+@media (width < 769px) {
+	.codersContent {
+		max-width: 100%;
+		margin-inline: 0;
+		gap: 20px;
+		padding-block: 28px;
+		padding-inline: 16px;
+	}
+}

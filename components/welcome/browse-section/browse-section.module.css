@@ -23,4 +23,7 @@
 	.browseSection > p {
 		text-align: center;
 	}
+	.browseSectionControllers > a {
+		min-width: 150.48px;
+	}
 }
