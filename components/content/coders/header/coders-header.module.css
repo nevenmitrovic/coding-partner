@@ -6,3 +6,12 @@
 .codersHeader > div:first-of-type {
 	width: 450px;
 }
+
+@media (width < 769px) {
+	.codersHeader {
+		gap: 12px;
+	}
+	.codersHeader > div:first-of-type {
+		width: 100%;
+	}
+}
