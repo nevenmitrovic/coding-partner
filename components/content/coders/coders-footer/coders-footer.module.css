@@ -18,3 +18,10 @@
 .codersFooter > p:last-child {
 	padding-left: 8px;
 }
+
+@media (width < 769px) {
+	.codersFooter {
+		width: 100%;
+		padding-top: 12px;
+	}
+}
