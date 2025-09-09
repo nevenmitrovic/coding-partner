@@ -4,7 +4,7 @@ export const coderProfiles: ICoderProfile[] = [
 	{
 		id: '1',
 		fullName: 'Sarah Chen',
-		year: '2025',
+		year: '2nd year',
 		active: '4 days ago',
 		skillsList: ['JavaScript', 'React', 'Node.js', 'TypeScript', 'MongoDB'],
 		interests: ['Web Development', 'AI/ML', 'Open Source', 'Gaming'],
@@ -13,7 +13,7 @@ export const coderProfiles: ICoderProfile[] = [
 	{
 		id: '2',
 		fullName: 'Marcus Johnson',
-		year: '2024',
+		year: '3rd year',
 		active: '4 days ago',
 		skillsList: ['Python', 'Django', 'PostgreSQL', 'Docker', 'AWS'],
 		interests: ['Backend Development', 'Cloud Computing', 'Data Science', 'Photography'],
@@ -22,7 +22,7 @@ export const coderProfiles: ICoderProfile[] = [
 	{
 		id: '3',
 		fullName: 'Emma Rodriguez',
-		year: '2026',
+		year: '1st year',
 		active: '4 days ago',
 		skillsList: ['Java', 'Spring Boot', 'MySQL', 'Android', 'Kotlin'],
 		interests: ['Mobile Development', 'UI/UX Design', 'Traveling', 'Music'],
@@ -31,7 +31,7 @@ export const coderProfiles: ICoderProfile[] = [
 	{
 		id: '4',
 		fullName: 'Alex Thompson',
-		year: '2025',
+		year: '2nd year',
 		active: '4 days ago',
 		skillsList: ['C#', '.NET', 'Azure', 'SQL Server', 'Angular'],
 		interests: ['Enterprise Software', 'DevOps', 'Cybersecurity', 'Sports'],
@@ -40,7 +40,7 @@ export const coderProfiles: ICoderProfile[] = [
 	{
 		id: '5',
 		fullName: 'Priya Patel',
-		year: '2024',
+		year: '3rd year',
 		active: '4 days ago',
 		skillsList: ['Flutter', 'Dart', 'Firebase', 'React Native', 'Swift'],
 		interests: ['Mobile Apps', 'Startup Culture', 'Fitness', 'Cooking'],
@@ -49,7 +49,7 @@ export const coderProfiles: ICoderProfile[] = [
 	{
 		id: '6',
 		fullName: 'David Kim',
-		year: '2023',
+		year: '4th year',
 		active: '4 days ago',
 		skillsList: ['Go', 'Kubernetes', 'Redis', 'gRPC', 'Microservices'],
 		interests: ['Distributed Systems', 'Blockchain', 'Hiking', 'Chess'],
@@ -58,7 +58,7 @@ export const coderProfiles: ICoderProfile[] = [
 	{
 		id: '7',
 		fullName: 'Lisa Wang',
-		year: '2026',
+		year: '1st year',
 		active: '4 days ago',
 		skillsList: ['Vue.js', 'Nuxt.js', 'SCSS', 'Webpack', 'Jest'],
 		interests: ['Frontend Development', 'Design Systems', 'Art', 'Yoga'],
@@ -67,7 +67,7 @@ export const coderProfiles: ICoderProfile[] = [
 	{
 		id: '8',
 		fullName: 'James Wilson',
-		year: '2025',
+		year: '2nd year',
 		active: '4 days ago',
 		skillsList: ['Rust', 'WebAssembly', 'GraphQL', 'Postgres', 'Linux'],
 		interests: ['Systems Programming', 'Performance Optimization', 'Reading', 'Coffee'],
@@ -76,7 +76,7 @@ export const coderProfiles: ICoderProfile[] = [
 	{
 		id: '9',
 		fullName: 'Zoe Martinez',
-		year: '2024',
+		year: '3rd year',
 		active: '4 days ago',
 		skillsList: ['PHP', 'Laravel', 'MySQL', 'Vue.js', 'Docker'],
 		interests: ['Full Stack Development', 'E-commerce', 'Dancing', 'Volunteering'],
@@ -85,7 +85,7 @@ export const coderProfiles: ICoderProfile[] = [
 	{
 		id: '10',
 		fullName: "Ryan O'Connor",
-		year: '2023',
+		year: '4th year',
 		active: '4 days ago',
 		skillsList: ['Ruby', 'Rails', 'Sidekiq', 'Heroku', 'RSpec'],
 		interests: ['Web Applications', 'Automation', 'Mountain Biking', 'Podcasts'],

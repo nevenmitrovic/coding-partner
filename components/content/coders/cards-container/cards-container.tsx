@@ -1,13 +1,15 @@
+import { getCoders } from '@/services/coders'
 import styles from './cards-container.module.css'
 import ProfileCard from './profile-card/profile-card'
 
-export default function CardsContainer() {
+export default async function CardsContainer() {
+	const coders = await getCoders()
+
 	return (
 		<section className={styles.cardsContainer}>
-			<ProfileCard />
-			<ProfileCard />
-			<ProfileCard />
-			<ProfileCard />
+			{coders.map((coder) => (
+				<ProfileCard key={coder.id} {...coder} />
+			))}
 		</section>
 	)
 }

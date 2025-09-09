@@ -5,36 +5,33 @@ import InterestsList from './interests-list/interests-list'
 import styles from './profile-card.module.css'
 import SkillsList from './skills-list/skills-list'
 import { getWatsAppMe } from '@/utils'
+import { ICoderProfile } from '@/types'
 
-export default function ProfileCard() {
+export default function ProfileCard({
+	id,
+	fullName,
+	skillsList,
+	interests,
+	active,
+	year,
+	whatsApp,
+}: ICoderProfile) {
 	return (
 		<div className={styles.profileCard}>
 			<header>
 				<div>
-					<h4>Neven Mitrovic</h4>
-					<p>#331</p>
+					<h4>{fullName}</h4>
+					<p>#{id}</p>
 				</div>
 				<div>
-					<p>Year: N/A</p>
-					<p>Active: 4 days ago</p>
+					<p>Year: {year}</p>
+					<p>Active: {active}</p>
 				</div>
 			</header>
 			<div className={styles.profileInfo}>
-				<SkillsList
-					list={[
-						'React',
-						'JavaScript',
-						'Angular',
-						'Vue',
-						'NodeJS',
-						'TailwindCSS',
-						'digital ocean',
-						'aws',
-						'docker',
-					]}
-				/>
-				<InterestsList list={['Web Development', 'UI/UX', 'Mobile Development']} />
-				<Link href={getWatsAppMe('+381656196083')}>
+				<SkillsList list={skillsList} />
+				<InterestsList list={interests} />
+				<Link href={getWatsAppMe(whatsApp)}>
 					<Button text='> WatsApp' type='button' />
 				</Link>
 			</div>
