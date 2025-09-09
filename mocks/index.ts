@@ -1,6 +1,6 @@
-import { IUserProfile } from '@/types'
+import { ICoderProfile } from '@/types'
 
-export const userProfiles: IUserProfile[] = [
+export const coderProfiles: ICoderProfile[] = [
 	{
 		id: '1',
 		fullName: 'Sarah Chen',

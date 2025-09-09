@@ -7,7 +7,7 @@ export interface IInput {
 	type: 'text' | 'number'
 	placeholder: string
 }
-export interface IUserProfile {
+export interface ICoderProfile {
 	id: string
 	fullName: string
 	year: string
