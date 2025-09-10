@@ -1,0 +1,181 @@
+.profileCard {
+	display: flex;
+	flex-direction: column;
+	padding: 18px;
+	gap: 18px;
+	border: 1px solid var(--card-foreground);
+	background-color: var(--card);
+	box-shadow: var(--glow-secondary);
+	transform: translateY(0);
+	transition: box-shadow 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.header::after {
+	content: '';
+	width: 150px;
+	border-bottom: 1px solid var(--card-foreground);
+	margin-inline: auto;
+	padding-top: 12px;
+}
+
+.headerTop {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.headerBottom {
+	display: flex;
+	gap: 4px;
+}
+
+.nameLoading {
+	height: 24px;
+	width: 140px;
+	background: linear-gradient(
+		90deg,
+		var(--terminal-gray) 25%,
+		var(--terminal-light-gray) 50%,
+		var(--terminal-gray) 75%
+	);
+	background-size: 200% 100%;
+	animation: shimmer 1.5s infinite;
+	border-radius: 4px;
+}
+
+.idLoading {
+	height: 20px;
+	width: 40px;
+	background: linear-gradient(
+		90deg,
+		var(--terminal-gray) 25%,
+		var(--terminal-light-gray) 50%,
+		var(--terminal-gray) 75%
+	);
+	background-size: 200% 100%;
+	animation: shimmer 1.5s infinite;
+	border-radius: 4px;
+}
+
+.yearLoading,
+.activeLoading {
+	height: 16px;
+	width: 60px;
+	background: linear-gradient(
+		90deg,
+		var(--terminal-gray) 25%,
+		var(--terminal-light-gray) 50%,
+		var(--terminal-gray) 75%
+	);
+	background-size: 200% 100%;
+	animation: shimmer 1.5s infinite;
+	border-radius: 4px;
+	padding-right: 8px;
+}
+
+.activeLoading {
+	padding-left: 4px;
+	padding-right: 0;
+}
+
+.profileInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.skillsLoading,
+.interestsLoading {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.skillItem,
+.interestItem {
+	height: 20px;
+	width: 80px;
+	background: linear-gradient(90deg, var(--card) 25%, var(--terminal-gray) 50%, var(--card) 75%);
+	background-size: 200% 100%;
+	animation: shimmer 1.5s infinite;
+	border-radius: 12px;
+}
+
+.interestItem {
+	width: 70px;
+}
+
+.buttonLoading {
+	height: 36px;
+	width: 100%;
+	background: linear-gradient(
+		90deg,
+		var(--terminal-gray) 25%,
+		var(--terminal-light-gray) 50%,
+		var(--terminal-gray) 75%
+	);
+	background-size: 200% 100%;
+	animation: shimmer 1.5s infinite;
+	border-radius: 4px;
+	text-align: left;
+}
+
+.profileStatus {
+	display: flex;
+	align-items: center;
+	font-size: var(--text-main-sm);
+	gap: 8px;
+	padding-top: 18px;
+	border-top: 1px solid var(--terminal-gray);
+}
+
+.statusIndicator {
+	border-radius: 50%;
+	width: 12px;
+	height: 12px;
+	background: linear-gradient(
+		90deg,
+		var(--terminal-gray) 25%,
+		var(--terminal-light-gray) 50%,
+		var(--terminal-gray) 75%
+	);
+	background-size: 200% 100%;
+	animation: shimmer 1.5s infinite;
+}
+
+.statusTextLoading {
+	height: 16px;
+	width: 100px;
+	background: linear-gradient(90deg, var(--card) 25%, var(--terminal-gray) 50%, var(--card) 75%);
+	background-size: 200% 100%;
+	animation: shimmer 1.5s infinite;
+	border-radius: 4px;
+}
+
+@media (width < 769px) {
+	.profileCard {
+		padding: 12px;
+		gap: 12px;
+	}
+	.header {
+		gap: 10px;
+	}
+	.header::after {
+		padding-top: 10px;
+	}
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: -200% 0;
+	}
+	100% {
+		background-position: 200% 0;
+	}
+}

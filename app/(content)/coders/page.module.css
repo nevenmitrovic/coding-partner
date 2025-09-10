@@ -6,6 +6,11 @@
 	gap: 48px;
 	padding-block: 60px;
 }
+.cardsContainer {
+	display: grid;
+	grid-template-columns: repeat(3, 420px);
+	gap: 10px;
+}
 
 @media (width < 769px) {
 	.codersContent {
@@ -14,5 +19,10 @@
 		gap: 20px;
 		padding-block: 28px;
 		padding-inline: 16px;
+	}
+	.cardsContainer {
+		display: grid;
+		grid-template-columns: repeat(1, 100%);
+		gap: 16px;
 	}
 }
