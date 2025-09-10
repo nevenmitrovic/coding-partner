@@ -8,11 +8,25 @@ export interface IInput {
 	placeholder: string
 }
 export interface ICoderProfile {
-	id: string
-	fullName: string
+	id: number
+	full_name: string
 	year: string
 	active: string
-	skillsList: string[]
-	interests: string[]
 	whatsApp: string
+}
+export interface ISkill {
+	id: number
+	name: string
+}
+export interface IInterests {
+	id: number
+	name: string
+}
+export interface ICoderSkill {
+	coder_id: number
+	skill_id: number
+}
+export interface ICoderInterest {
+	coder_id: number
+	interest_id: number
 }
