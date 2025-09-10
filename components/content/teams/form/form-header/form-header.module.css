@@ -1,0 +1,11 @@
+.formHeader {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+@media (width < 769px) {
+	.formHeader {
+		gap: 12px;
+	}
+}
