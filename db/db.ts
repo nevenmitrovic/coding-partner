@@ -10,43 +10,49 @@ import {
 const db = sql('cp.db')
 
 db.prepare(
-	`
-   CREATE TABLE IF NOT EXISTS coders (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      full_name TEXT NOT NULL,
-      year TEXT NOT NULL,
-      active TEXT NOT NULL,
-      whatsApp TEXT
-   );
-   
-   CREATE TABLE IF NOT EXISTS skills (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL UNIQUE
-   );
+	`CREATE TABLE IF NOT EXISTS coders (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        full_name TEXT NOT NULL,
+        year TEXT NOT NULL,
+        active TEXT NOT NULL,
+        whatsApp TEXT
+    )`
+).run()
 
-   CREATE TABLE IF NOT EXISTS interests (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL UNIQUE
-   );
+db.prepare(
+	`CREATE TABLE IF NOT EXISTS skills (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL UNIQUE
+    )`
+).run()
 
-   CREATE TABLE IF NOT EXISTS coder_skills (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      coder_id INTEGER NOT NULL,
-      skill_id INTEGER NOT NULL,
-      FOREIGN KEY (coder_id) REFERENCES coders(id) ON DELETE CASCADE,
-      FOREIGN KEY (skill_id) REFERENCES skills(id) ON DELETE CASCADE,
-      UNIQUE(coder_id, skill_id)
-   );
+db.prepare(
+	`CREATE TABLE IF NOT EXISTS interests (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL UNIQUE
+    )`
+).run()
 
-   CREATE TABLE IF NOT EXISTS coder_interests (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      coder_id INTEGER NOT NULL,
-      interest_id INTEGER NOT NULL,
-      FOREIGN KEY (coder_id) REFERENCES coders(id) ON DELETE CASCADE,
-      FOREIGN KEY (interest_id) REFERENCES interests(id) ON DELETE CASCADE,
-      UNIQUE(coder_id, interest_id)
-   );
-`
+db.prepare(
+	`CREATE TABLE IF NOT EXISTS coder_skills (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        coder_id INTEGER NOT NULL,
+        skill_id INTEGER NOT NULL,
+        FOREIGN KEY (coder_id) REFERENCES coders(id) ON DELETE CASCADE,
+        FOREIGN KEY (skill_id) REFERENCES skills(id) ON DELETE CASCADE,
+        UNIQUE(coder_id, skill_id)
+    )`
+).run()
+
+db.prepare(
+	`CREATE TABLE IF NOT EXISTS coder_interests (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        coder_id INTEGER NOT NULL,
+        interest_id INTEGER NOT NULL,
+        FOREIGN KEY (coder_id) REFERENCES coders(id) ON DELETE CASCADE,
+        FOREIGN KEY (interest_id) REFERENCES interests(id) ON DELETE CASCADE,
+        UNIQUE(coder_id, interest_id)
+    )`
 ).run()
 
 // INITIALIZE CODERS TABLE
@@ -56,7 +62,7 @@ if (codersCount.count === 0) {
 	const stmt = db.prepare(`
         INSERT INTO coders VALUES (
             null,
-            @fullName,
+            @full_name,
             @year,
             @active,
             @whatsApp

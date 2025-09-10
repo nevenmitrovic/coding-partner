@@ -7,6 +7,10 @@ export interface IInput {
 	type: 'text' | 'number'
 	placeholder: string
 }
+export interface ICoder extends ICoderProfile {
+	skills: string[]
+	interests: string[]
+}
 export interface ICoderProfile {
 	id: number
 	full_name: string

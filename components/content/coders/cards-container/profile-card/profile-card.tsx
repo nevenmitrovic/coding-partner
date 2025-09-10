@@ -5,22 +5,22 @@ import InterestsList from './interests-list/interests-list'
 import styles from './profile-card.module.css'
 import SkillsList from './skills-list/skills-list'
 import { getWatsAppMe } from '@/utils'
-import { ICoderProfile } from '@/types'
+import { ICoder } from '@/types'
 
 export default function ProfileCard({
 	id,
-	fullName,
-	skillsList,
+	full_name,
+	skills,
 	interests,
 	active,
 	year,
 	whatsApp,
-}: ICoderProfile) {
+}: ICoder) {
 	return (
 		<div className={styles.profileCard}>
 			<header>
 				<div>
-					<h4>{fullName}</h4>
+					<h4>{full_name}</h4>
 					<p>#{id}</p>
 				</div>
 				<div>
@@ -29,7 +29,7 @@ export default function ProfileCard({
 				</div>
 			</header>
 			<div className={styles.profileInfo}>
-				<SkillsList list={skillsList} />
+				<SkillsList list={skills} />
 				<InterestsList list={interests} />
 				<Link href={getWatsAppMe(whatsApp)}>
 					<Button text='> WatsApp' type='button' />
