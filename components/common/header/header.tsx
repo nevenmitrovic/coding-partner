@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 import { useIsMobile } from '@/hooks/useIsMobile'
 import styles from './header.module.css'
@@ -19,10 +20,10 @@ export default function Header() {
 	return (
 		<div className={styles.headerContainer}>
 			<header>
-				<div className={`${styles.logo} typing-animation`}>
+				<Link href='/' className={`${styles.logo} typing-animation`}>
 					$ Coding_Partner
 					<BlinkingCursor />
-				</div>
+				</Link>
 				<ClientOnly>
 					{!isMobile && <Navigation />}
 					{isMobile && (
