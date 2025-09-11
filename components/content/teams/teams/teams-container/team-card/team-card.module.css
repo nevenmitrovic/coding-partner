@@ -3,6 +3,7 @@
 	flex-direction: column;
 	padding: 18px;
 	gap: 18px;
+	color: var(--terminal-dark-green);
 	border: 1px solid var(--card-foreground);
 	background-color: var(--card);
 	box-shadow: var(--glow-secondary);
@@ -12,4 +13,67 @@
 .teamCard:hover {
 	box-shadow: var(--glow-primary);
 	transform: translateY(-3px);
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.teamName {
+	font-size: var(--text-main-regular);
+	font-weight: bold;
+}
+
+.project {
+	font-size: var(--text-main-sm);
+	font-style: italic;
+}
+
+.skills {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.skillsList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.skill {
+	background-color: var(--accent);
+	color: var(--accent-foreground);
+	padding: 4px 8px;
+	font-size: var(--text-main-sm);
+	border: 1px solid var(--accent-foreground);
+}
+
+.timeline {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.timelineValue {
+	color: var(--foreground);
+}
+
+.description {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.descriptionText {
+	color: var(--foreground);
+	font-size: var(--text-main-sm);
+}
+
+.actions {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
