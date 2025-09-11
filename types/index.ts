@@ -60,3 +60,11 @@ export interface ITextarea {
 	placeholder: string
 	info?: string
 }
+export interface ITeamCard {
+	teamName: string
+	project: string
+	requiredSkills: string[]
+	projectTimeline: string
+	description: string
+	whatsappGroupLink?: string
+}

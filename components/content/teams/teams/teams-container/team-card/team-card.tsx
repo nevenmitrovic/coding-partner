@@ -2,15 +2,7 @@ import Link from 'next/link'
 
 import Button from '@/components/common/ui/button'
 import styles from './team-card.module.css'
-
-interface TeamCardProps {
-	teamName: string
-	project: string
-	requiredSkills: string[]
-	projectTimeline: string
-	description: string
-	whatsappGroupLink?: string
-}
+import { ITeamCard } from '@/types'
 
 export default function TeamCard({
 	teamName,
@@ -19,7 +11,7 @@ export default function TeamCard({
 	projectTimeline,
 	description,
 	whatsappGroupLink,
-}: TeamCardProps) {
+}: ITeamCard) {
 	return (
 		<div className={styles.teamCard}>
 			<header className={styles.header}>

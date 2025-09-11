@@ -1,4 +1,4 @@
-import { ICoderInterest, ICoderProfile, ICoderSkill, IInterests, ISkill } from '@/types'
+import { ICoderInterest, ICoderProfile, ICoderSkill, IInterests, ISkill, ITeamCard } from '@/types'
 
 export const coderProfiles: ICoderProfile[] = [
 	{
@@ -193,4 +193,32 @@ export const coderInterestsData: ICoderInterest[] = [
 	{ coder_id: 9, interest_id: 18 },
 	{ coder_id: 10, interest_id: 22 },
 	{ coder_id: 10, interest_id: 19 },
+]
+export const teamsData: ITeamCard[] = [
+	{
+		teamName: 'CodeCrusaders',
+		project: 'Serbia Hackathon 2024',
+		requiredSkills: ['React', 'Node.js', 'MongoDB', 'UI/UX'],
+		projectTimeline: '48 hours',
+		description:
+			"Building an innovative platform for connecting developers and fostering collaboration. We're looking for passionate developers who want to create something amazing together!",
+		whatsappGroupLink: 'https://chat.whatsapp.com/example123',
+	},
+	{
+		teamName: 'DevNinjas',
+		project: 'AI Startup Challenge',
+		requiredSkills: ['Python', 'Machine Learning', 'FastAPI', 'Docker'],
+		projectTimeline: '2 weeks',
+		description:
+			"Developing an AI-powered solution for automated code review and bug detection. Join us if you're passionate about AI and want to revolutionize software development!",
+	},
+	{
+		teamName: 'PixelPioneers',
+		project: 'Mobile App Contest',
+		requiredSkills: ['React Native', 'Firebase', 'Figma', 'TypeScript'],
+		projectTimeline: '1 month',
+		description:
+			'Creating a mobile app that helps students find study groups and collaborate on projects. Perfect opportunity for mobile developers and designers to showcase their skills.',
+		whatsappGroupLink: 'https://chat.whatsapp.com/example456',
+	},
 ]
