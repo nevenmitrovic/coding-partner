@@ -1,9 +1,16 @@
 import { IInput } from '@/types'
 
-export default function Input({ type, placeholder }: IInput) {
+export default function Input({ type, placeholder, name, label }: IInput) {
 	return (
 		<div>
-			<input className='inputContainer' id='input' type={type} placeholder={placeholder} />
+			{label && <label htmlFor={name}>{label}</label>}
+			<input
+				className='inputContainer'
+				name={name}
+				id='input'
+				type={type}
+				placeholder={placeholder}
+			/>
 		</div>
 	)
 }

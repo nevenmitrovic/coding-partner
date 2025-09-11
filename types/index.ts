@@ -6,6 +6,8 @@ export interface INavLink {
 export interface IInput {
 	type: 'text' | 'number'
 	placeholder: string
+	label?: string
+	name: string
 }
 export interface ICoder extends ICoderProfile {
 	skills: string[]

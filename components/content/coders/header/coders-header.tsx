@@ -7,7 +7,11 @@ export default function CodersHeader() {
 		<header className={styles.codersHeader}>
 			<h2>Browse Coders</h2>
 			<div>
-				<Input type='text' placeholder='Search by name, skills and interests...' />
+				<Input
+					type='text'
+					name='coderSearch'
+					placeholder='Search by name, skills and interests...'
+				/>
 			</div>
 			<p>Found {getCodersCount()} active hackers</p>
 		</header>
