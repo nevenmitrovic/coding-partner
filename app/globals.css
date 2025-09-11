@@ -203,6 +203,11 @@
 	p {
 		color: var(--terminal-dark-green);
 	}
+
+	label {
+		font-size: var(--text-main-regular);
+		color: var(--terminal-dark-green);
+	}
 }
 
 @layer utilities {
@@ -263,8 +268,66 @@
 	#input::placeholder {
 		color: var(--terminal-dim-green);
 	}
+	#select {
+		padding: 8px 12px;
+		border: 1px solid var(--border);
+		outline: none;
+		background-color: var(--terminal-gray);
+		color: var(--terminal-dim-green);
+		cursor: pointer;
+		appearance: none;
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2366b366' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+		background-repeat: no-repeat;
+		background-position: right 8px center;
+		background-size: 16px;
+		padding-right: 40px;
+	}
+	#select:focus {
+		outline: 2px solid var(--terminal-dim-green);
+		box-shadow: var(--glow-secondary);
+	}
+	#select:hover {
+		border-color: var(--terminal-green);
+	}
+	#select option {
+		background-color: var(--terminal-gray);
+		color: var(--terminal-dim-green);
+		padding: 8px 12px;
+	}
+	#select option:checked {
+		background-color: var(--accent);
+		color: var(--background);
+	}
+	#textarea {
+		padding: 12px;
+		border: 1px solid var(--border);
+		outline: none;
+		background-color: var(--terminal-gray);
+		color: var(--terminal-green);
+		font-family: inherit;
+		font-size: inherit;
+		line-height: 1.5;
+		resize: vertical;
+		min-height: 120px;
+		width: 100%;
+	}
+	#textarea:focus {
+		outline: 2px solid var(--terminal-dim-green);
+		box-shadow: var(--glow-secondary);
+		border-color: var(--terminal-green);
+	}
+	#textarea::placeholder {
+		color: var(--terminal-dim-green);
+	}
+	#textarea:hover {
+		border-color: var(--terminal-green);
+	}
 	.inputContainer {
 		width: 100%;
+	}
+	.infoFormText {
+		font-size: var(--text-main-sm);
+		color: var(--terminal-dark-green);
 	}
 
 	.typing-animation {

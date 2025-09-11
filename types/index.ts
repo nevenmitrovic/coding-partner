@@ -8,6 +8,7 @@ export interface IInput {
 	placeholder: string
 	label?: string
 	name: string
+	info?: string
 }
 export interface ICoder extends ICoderProfile {
 	skills: string[]
@@ -35,4 +36,18 @@ export interface ICoderSkill {
 export interface ICoderInterest {
 	coder_id: number
 	interest_id: number
+}
+export interface IFormCard {
+	title: string
+}
+export interface ISelect {
+	name: string
+	label: string
+	options: string[]
+}
+export interface ITextarea {
+	name: string
+	label: string
+	placeholder: string
+	info?: string
 }
