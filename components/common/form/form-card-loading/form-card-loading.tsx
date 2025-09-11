@@ -9,7 +9,6 @@ export default function FormCardLoading() {
 			<div className={styles.formCardContent}>
 				<div className={styles.skeleton}></div>
 				<div className={styles.skeleton}></div>
-				<div className={styles.skeleton}></div>
 			</div>
 		</div>
 	)
