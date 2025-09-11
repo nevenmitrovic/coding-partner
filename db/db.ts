@@ -5,55 +5,58 @@ import {
 	interestsData,
 	coderSkillsData,
 	coderInterestsData,
+	teamsData,
 } from '@/mocks'
 
 const db = sql('cp.db')
 
-db.prepare(
-	`CREATE TABLE IF NOT EXISTS coders (
+db.exec(`
+    CREATE TABLE IF NOT EXISTS coders (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         full_name TEXT NOT NULL,
         year TEXT NOT NULL,
         active TEXT NOT NULL,
         whatsApp TEXT
-    )`
-).run()
+    );
 
-db.prepare(
-	`CREATE TABLE IF NOT EXISTS skills (
+    CREATE TABLE IF NOT EXISTS skills (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL UNIQUE
-    )`
-).run()
+    );
 
-db.prepare(
-	`CREATE TABLE IF NOT EXISTS interests (
+    CREATE TABLE IF NOT EXISTS interests (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL UNIQUE
-    )`
-).run()
+    );
 
-db.prepare(
-	`CREATE TABLE IF NOT EXISTS coder_skills (
+    CREATE TABLE IF NOT EXISTS coder_skills (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         coder_id INTEGER NOT NULL,
         skill_id INTEGER NOT NULL,
         FOREIGN KEY (coder_id) REFERENCES coders(id) ON DELETE CASCADE,
         FOREIGN KEY (skill_id) REFERENCES skills(id) ON DELETE CASCADE,
         UNIQUE(coder_id, skill_id)
-    )`
-).run()
+    );
 
-db.prepare(
-	`CREATE TABLE IF NOT EXISTS coder_interests (
+    CREATE TABLE IF NOT EXISTS coder_interests (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         coder_id INTEGER NOT NULL,
         interest_id INTEGER NOT NULL,
         FOREIGN KEY (coder_id) REFERENCES coders(id) ON DELETE CASCADE,
         FOREIGN KEY (interest_id) REFERENCES interests(id) ON DELETE CASCADE,
         UNIQUE(coder_id, interest_id)
-    )`
-).run()
+    );
+
+    CREATE TABLE IF NOT EXISTS teams (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        team_name TEXT NOT NULL,
+        project TEXT NOT NULL,
+        required_skills TEXT NOT NULL,
+        project_timeline TEXT NOT NULL,
+        description TEXT NOT NULL,
+        whatsapp_group_link TEXT NOT NULL
+    );
+`)
 
 // INITIALIZE CODERS TABLE
 const codersCount = db.prepare('SELECT COUNT(*) as count FROM coders').get() as { count: number }
@@ -143,6 +146,27 @@ if (coderInterestsCount.count === 0) {
 
 	for (const coderInterest of coderInterestsData) {
 		coderInterestsStmt.run(coderInterest)
+	}
+}
+
+// INITIALIZE TEAM TABLE
+const teamsCount = db.prepare('SELECT COUNT(*) as count from teams').get() as { count: number }
+
+if (teamsCount.count === 0) {
+	const teamsStmt = db.prepare(`
+        INSERT INTO teams VALUES (
+            null,
+            @team_name,
+            @project,
+            @required_skills,
+            @project_timeline,
+            @description,
+            @whatsapp_group_link
+        )    
+    `)
+
+	for (const team of teamsData) {
+		teamsStmt.run(team)
 	}
 }
 

@@ -1,11 +1,13 @@
+import { getTeams } from '@/services/teams'
 import TeamCard from './team-card/team-card'
-import { teamsData } from '@/mocks'
 import styles from './teams-container.module.css'
 
-export default function TeamsContainer() {
+export default async function TeamsContainer() {
+	const teams = await getTeams()
+
 	return (
 		<div className={styles.teamsContainer}>
-			{teamsData.map((team) => (
+			{teams.map((team) => (
 				<TeamCard key={team.project} {...team} />
 			))}
 		</div>

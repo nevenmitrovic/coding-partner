@@ -59,6 +59,14 @@ export interface ITextarea {
 	placeholder: string
 	info?: string
 }
+export interface ITeam {
+	team_name: string
+	project: string
+	required_skills: string
+	project_timeline: string
+	description: string
+	whatsapp_group_link: string
+}
 export interface ITeamCard {
 	teamName: string
 	project: string

@@ -1,4 +1,4 @@
-import { db, codersCount } from '@/db/db'
+import { db } from '@/db/db'
 import { ICoder } from '@/types'
 
 export async function getCoders(): Promise<ICoder[]> {
@@ -58,5 +58,6 @@ export async function getCoders(): Promise<ICoder[]> {
 }
 
 export function getCodersCount() {
+	const codersCount = db.prepare('SELECT COUNT(*) as count FROM coders').get() as { count: number }
 	return codersCount.count
 }
