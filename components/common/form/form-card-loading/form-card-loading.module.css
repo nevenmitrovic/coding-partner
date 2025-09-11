@@ -1,0 +1,73 @@
+.formCard {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 18px;
+	gap: 18px;
+	border: 1px solid var(--card-foreground);
+	background-color: var(--card);
+	box-shadow: var(--glow-secondary);
+	transition: transform 300ms ease-in-out;
+}
+
+.formCard:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--glow-primary);
+}
+
+.formCardHeader {
+	font-size: var(--text-main-regular);
+	color: var(--terminal-dark-green);
+}
+
+.formCardHeader::after {
+	content: '';
+	display: block;
+	border-bottom: 1px solid var(--card-foreground);
+	width: 25%;
+	height: 1px;
+	margin: 8px auto;
+}
+
+.formCardContent {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.titleSkeleton {
+	height: 20px;
+	width: 60%;
+	background: linear-gradient(
+		90deg,
+		var(--card-foreground) 25%,
+		transparent 37%,
+		var(--card-foreground) 63%
+	);
+	background-size: 400% 100%;
+	animation: shimmer 1.5s ease-in-out infinite;
+	border-radius: 4px;
+}
+
+.skeleton {
+	height: 40px;
+	width: 100%;
+	background: linear-gradient(
+		90deg,
+		var(--card-foreground) 25%,
+		transparent 37%,
+		var(--card-foreground) 63%
+	);
+	background-size: 400% 100%;
+	animation: shimmer 1.5s ease-in-out infinite;
+	border-radius: 4px;
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: 100% 0;
+	}
+	100% {
+		background-position: -100% 0;
+	}
+}
