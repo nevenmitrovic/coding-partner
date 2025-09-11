@@ -37,13 +37,22 @@ export interface ICoderInterest {
 	coder_id: number
 	interest_id: number
 }
+export interface IFormCardField {
+	type: 'text' | 'textarea' | 'select'
+	placeholder: string
+	label: string
+	name: string
+	info?: string
+}
 export interface IFormCard {
 	title: string
+	fields: IFormCardField[]
+	options?: ISkill[]
 }
 export interface ISelect {
 	name: string
 	label: string
-	options: string[]
+	options: ISkill[]
 }
 export interface ITextarea {
 	name: string
