@@ -41,7 +41,7 @@ export const TEAM_FORM_CARDS: IFormCard[] = [
 		title: '> requirements.yaml',
 		fields: [
 			{
-				type: 'select',
+				type: 'text',
 				placeholder: 'Frontend, Backend, UI/UX, Mobile Dev (comma separated)',
 				label: '> required_skills: []',
 				name: 'requiredSkills',

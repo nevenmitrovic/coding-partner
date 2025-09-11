@@ -4,7 +4,7 @@ import Textarea from '@/components/common/ui/textarea'
 import styles from './form-card.module.css'
 import { IFormCard, IFormCardField, ISkill } from '@/types'
 
-function renderField(field: IFormCardField, options: ISkill[] = []) {
+function renderField(field: IFormCardField) {
 	if (field.type === 'text') {
 		return (
 			<Input
@@ -16,8 +16,6 @@ function renderField(field: IFormCardField, options: ISkill[] = []) {
 				label={field.label}
 			/>
 		)
-	} else if (field.type === 'select') {
-		return <Select key={field.name} name={field.name} label={field.label} options={options} />
 	} else {
 		return (
 			<Textarea
@@ -31,13 +29,11 @@ function renderField(field: IFormCardField, options: ISkill[] = []) {
 	}
 }
 
-export default function FormCard({ title, fields, options }: IFormCard) {
+export default function FormCard({ title, fields }: IFormCard) {
 	return (
 		<div className={styles.formCard}>
 			<header className={styles.formCardHeader}>{title}</header>
-			<div className={styles.formCardContent}>
-				{fields.map((field) => renderField(field, options))}
-			</div>
+			<div className={styles.formCardContent}>{fields.map((field) => renderField(field))}</div>
 		</div>
 	)
 }

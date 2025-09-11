@@ -47,12 +47,11 @@ export interface IFormCardField {
 export interface IFormCard {
 	title: string
 	fields: IFormCardField[]
-	options?: ISkill[]
 }
 export interface ISelect {
 	name: string
 	label: string
-	options: ISkill[]
+	options: string[]
 }
 export interface ITextarea {
 	name: string
