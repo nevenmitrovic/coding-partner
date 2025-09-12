@@ -1,0 +1,114 @@
+.teamCardLoading {
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+	padding: 18px;
+	gap: 18px;
+	color: var(--terminal-dark-green);
+	border: 1px solid var(--card-foreground);
+	background-color: var(--card);
+	box-shadow: var(--glow-secondary);
+	transform: translateY(0);
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.teamName {
+	height: 24px;
+	width: 60%;
+}
+
+.project {
+	height: 18px;
+	width: 80%;
+}
+
+.skills {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.skillsLabel {
+	height: 18px;
+	width: 120px;
+}
+
+.skillsList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.skill {
+	height: 26px;
+	width: 80px;
+}
+
+.timeline {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.timelineLabel {
+	height: 18px;
+	width: 80px;
+}
+
+.timelineValue {
+	height: 18px;
+	width: 120px;
+}
+
+.description {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.descriptionLabel {
+	height: 18px;
+	width: 90px;
+}
+
+.descriptionText {
+	height: 16px;
+	width: 100%;
+}
+
+.actions {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.button {
+	height: 40px;
+	width: 120px;
+}
+
+.skeleton {
+	background: linear-gradient(
+		90deg,
+		var(--card-foreground) 25%,
+		rgba(255, 255, 255, 0.1) 50%,
+		var(--card-foreground) 75%
+	);
+	background-size: 200% 100%;
+	animation: loading 1.5s infinite;
+	border-radius: 4px;
+}
+
+@keyframes loading {
+	0% {
+		background-position: 200% 0;
+	}
+	100% {
+		background-position: -200% 0;
+	}
+}
