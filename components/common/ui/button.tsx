@@ -13,7 +13,7 @@ export default memo(function Button({ text, type, onClick }: ButtonProps) {
 	const { pending } = useFormStatus()
 
 	return (
-		<button id='button' type={type} onClick={onClick} disabled={pending}>
+		<button id='button' type={type} onClick={onClick} disabled={pending} aria-disabled={pending}>
 			{pending ? 'Submitting...' : text}
 		</button>
 	)
