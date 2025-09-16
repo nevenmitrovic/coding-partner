@@ -1,0 +1,17 @@
+.toastContainer {
+	opacity: 1;
+	transform: translateY(0);
+	background-color: var(--card);
+	color: var(--card-foreground);
+	border: 1px solid var(--border);
+	padding: 12px 16px;
+	transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+.toastContainer.hidden {
+	opacity: 0;
+	transform: translateY(100%);
+}
+.toastContainer.visible {
+	opacity: 1;
+	transform: translateY(0);
+}

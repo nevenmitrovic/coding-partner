@@ -3,6 +3,8 @@ import { JetBrains_Mono } from 'next/font/google'
 
 import '../globals.css'
 import Header from '@/components/common/header/header'
+import ToastContainer from '@/components/common/toast/toast-container'
+import { ToastProvider } from '@/contexts/toast-context'
 
 const jetBrainsMono = JetBrains_Mono({
 	subsets: ['latin'],
@@ -26,7 +28,10 @@ export default function RootLayout({
 		<html lang='en' className={jetBrainsMono.variable}>
 			<body>
 				<Header />
-				{children}
+				<ToastProvider>
+					{children}
+					<ToastContainer />
+				</ToastProvider>
 			</body>
 		</html>
 	)

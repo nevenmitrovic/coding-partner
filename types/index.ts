@@ -75,3 +75,7 @@ export interface ITeamCard {
 	description: string
 	whatsappGroupLink?: string
 }
+export interface IToast {
+	id: string
+	message: string
+}
