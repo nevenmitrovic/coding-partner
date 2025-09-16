@@ -29,7 +29,12 @@ export function ToastProvider({ children }: ToastProviderProps) {
 			message,
 		}
 
-		setToasts((prev) => [...prev, toast])
+		setToasts((prev) => {
+			if (!prev.some((existingToast) => existingToast.id === id)) {
+				return [...prev, toast]
+			}
+			return prev
+		})
 
 		// Auto hide toast after duration
 		setTimeout(() => {
