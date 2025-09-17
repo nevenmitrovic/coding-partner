@@ -1,4 +1,5 @@
-import { FieldValues, UseControllerProps } from 'react-hook-form'
+import { TeamFormSchema } from '@/validations/teams'
+import { Control, FieldValues, UseControllerProps } from 'react-hook-form'
 
 export interface INavLink {
 	href: string
@@ -50,17 +51,22 @@ export interface IFormCardField {
 export interface IFormCard {
 	title: string
 	fields: IFormCardField[]
+	control: Control<TeamFormSchema>
+}
+export interface IFormContent {
+	control: Control<TeamFormSchema>
 }
 export interface ISelect {
 	name: string
 	label: string
 	options: string[]
 }
-export interface ITextarea {
+export interface ITextarea<T extends FieldValues> {
 	name: string
 	label: string
 	placeholder: string
 	info?: string
+	controllerProps: UseControllerProps<T>
 }
 export interface ITeam {
 	team_name: string

@@ -61,7 +61,7 @@ export default function TeamForm() {
 	return (
 		<Form className={styles.form} action={formAction}>
 			<FormHeader />
-			<FormContent />
+			<FormContent control={control} />
 			<FormSubmit />
 		</Form>
 	)
