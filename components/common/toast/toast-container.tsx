@@ -2,6 +2,7 @@
 
 import { useToast } from '@/contexts/toast-context'
 import Toast from './toast'
+import styles from './toast-container.module.css'
 
 export default function ToastContainer() {
 	const { toasts } = useToast()
@@ -12,7 +13,11 @@ export default function ToastContainer() {
 			return null
 		}
 
-		return <Toast id={firstToast.id} message={firstToast.message} />
+		return (
+			<div className={styles.container}>
+				<Toast id={firstToast.id} message={firstToast.message} />
+			</div>
+		)
 	}
 
 	return renderToast()

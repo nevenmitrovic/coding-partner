@@ -2,7 +2,7 @@ import * as z from 'zod'
 
 const whatsappInviteRegex = /^https:\/\/chat\.whatsapp\.com\/.{1,40}\/?$/
 
-const Team = z.object({
+export const teamFormSchema = z.object({
 	teamName: z
 		.string()
 		.min(1, 'Team name is required')
@@ -22,4 +22,4 @@ const Team = z.object({
 	}),
 })
 
-export { Team }
+export type TeamFormSchema = z.infer<typeof teamFormSchema>

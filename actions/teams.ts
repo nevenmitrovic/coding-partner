@@ -2,7 +2,7 @@
 
 import { ITeam } from '@/types'
 
-export async function createTeam(formData: FormData) {
+export async function createTeam(prevState: any, formData: FormData) {
 	await new Promise((resolve) => setTimeout(resolve, 500))
 
 	const teamName = formData.get('teamName') as string
@@ -22,4 +22,5 @@ export async function createTeam(formData: FormData) {
 	}
 
 	console.log('Team data:', teamData)
+	return { success: true, message: 'Team created successfully!' }
 }

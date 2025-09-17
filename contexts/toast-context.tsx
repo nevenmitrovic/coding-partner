@@ -1,11 +1,11 @@
 'use client'
 
-import { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useContext, useState, ReactNode, useCallback } from 'react'
 import { type IToast } from '@/types'
 
 interface ToastContextType {
 	toasts: IToast[]
-	showToast: (message: string) => void
+	showToast: (message: string, id?: string) => void
 	hideToast: (id: string) => void
 	clearAllToasts: () => void
 }
@@ -23,32 +23,35 @@ function getId(): string {
 export function ToastProvider({ children }: ToastProviderProps) {
 	const [toasts, setToasts] = useState<IToast[]>([])
 
-	const showToast = (message: string, id: string = getId()) => {
-		const toast: IToast = {
-			id,
-			message,
-		}
-
-		setToasts((prev) => {
-			if (!prev.some((existingToast) => existingToast.id === id)) {
-				return [...prev, toast]
-			}
-			return prev
-		})
-
-		// Auto hide toast after duration
-		setTimeout(() => {
-			hideToast(id)
-		}, 3000)
-	}
-
-	const hideToast = (id: string) => {
+	const hideToast = useCallback((id: string) => {
 		setToasts((prev) => prev.filter((toast) => toast.id !== id))
-	}
+	}, [])
 
-	const clearAllToasts = () => {
+	const showToast = useCallback(
+		(message: string, id: string = getId()) => {
+			const toast: IToast = {
+				id,
+				message,
+			}
+
+			setToasts((prev) => {
+				if (!prev.some((existingToast) => existingToast.id === id)) {
+					return [...prev, toast]
+				}
+				return prev
+			})
+
+			// Auto hide toast after duration
+			setTimeout(() => {
+				hideToast(id)
+			}, 3000)
+		},
+		[hideToast]
+	)
+
+	const clearAllToasts = useCallback(() => {
 		setToasts([])
-	}
+	}, [])
 
 	return (
 		<ToastContext.Provider
