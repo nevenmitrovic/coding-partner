@@ -1,14 +1,17 @@
+import { FieldValues, UseControllerProps } from 'react-hook-form'
+
 export interface INavLink {
 	href: string
 	label: string
 	onClose?: () => void
 }
-export interface IInput {
+export interface IInput<T extends FieldValues> {
 	type: 'text' | 'number'
 	placeholder: string
 	label?: string
 	name: string
 	info?: string
+	controllerProps: UseControllerProps<T>
 }
 export interface ICoder extends ICoderProfile {
 	skills: string[]
