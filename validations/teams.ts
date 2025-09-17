@@ -17,9 +17,18 @@ export const teamFormSchema = z.object({
 		.string()
 		.min(1, 'Description is required')
 		.max(250, 'Description can have a maximum of 250 characters'),
-	whatsappGroupLink: z.string().trim().regex(whatsappInviteRegex, {
-		message: 'Invalid WhatsApp group link. Expected format: https://chat.whatsapp.com/<code>',
-	}),
+	whatsappGroupLink: z
+		.string()
+		.optional()
+		.refine(
+			(value) => {
+				if (!value || value.trim() === '') return true
+				return whatsappInviteRegex.test(value.trim())
+			},
+			{
+				message: 'Invalid WhatsApp group link. Expected format: https://chat.whatsapp.com/<code>',
+			}
+		),
 })
 
 export type TeamFormSchema = z.infer<typeof teamFormSchema>

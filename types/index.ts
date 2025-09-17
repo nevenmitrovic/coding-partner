@@ -74,7 +74,7 @@ export interface ITeam {
 	required_skills: string
 	project_timeline: string
 	description: string
-	whatsapp_group_link: string
+	whatsapp_group_link?: string
 }
 export interface ITeamCard {
 	teamName: string

@@ -7,8 +7,8 @@ export default async function TeamsContainer() {
 
 	return (
 		<div className={styles.teamsContainer}>
-			{teams.map((team) => (
-				<TeamCard key={team.project} {...team} />
+			{teams.map((team, index) => (
+				<TeamCard key={`${team.project}-${index}`} {...team} />
 			))}
 		</div>
 	)

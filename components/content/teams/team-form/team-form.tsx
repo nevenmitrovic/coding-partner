@@ -1,7 +1,7 @@
 'use client'
 
 import Form from 'next/form'
-import { useForm } from 'react-hook-form'
+import { FieldErrors, useForm } from 'react-hook-form'
 import { FormEvent, startTransition, useActionState, useEffect } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -30,8 +30,29 @@ export default function TeamForm() {
 			whatsappGroupLink: '',
 		},
 	})
-	const { control, reset } = form
+	const { control, reset, handleSubmit } = form
 	const { showToast, hideToast } = useToast()
+
+	const onSubmit = (data: TeamFormSchema) => {
+		const formData = new FormData()
+		Object.entries(data).forEach(([key, value]) => {
+			formData.append(key, value || '')
+		})
+
+		startTransition(() => {
+			formAction(formData)
+		})
+	}
+	const onError = (errors: FieldErrors<TeamFormSchema>) => {
+		const firstError = Object.values(errors)[0]
+		if (firstError?.message) {
+			showToast(firstError.message, TOAST_ERROR)
+		}
+	}
+	const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault()
+		handleSubmit(onSubmit, onError)(e)
+	}
 
 	useEffect(() => {
 		if (isPending) {
@@ -42,27 +63,13 @@ export default function TeamForm() {
 			showToast(state.message, TOAST_SUCCESS)
 			reset()
 		}
-		if (state && state.success === false) {
-			hideToast(TOAST_LOADING)
-			showToast(state.message, TOAST_ERROR)
-		}
 	}, [state, isPending, showToast, hideToast, reset])
 
-	const onSubmit = (evt: FormEvent<HTMLFormElement>) => {
-		evt.preventDefault()
-		form.handleSubmit(() => {
-			startTransition(() => {
-				const formData = new FormData(evt.currentTarget)
-				formAction(formData)
-			})
-		})(evt)
-	}
-
 	return (
-		<Form className={styles.form} action={formAction}>
+		<form className={styles.form} onSubmit={handleFormSubmit}>
 			<FormHeader />
 			<FormContent control={control} />
 			<FormSubmit />
-		</Form>
+		</form>
 	)
 }
