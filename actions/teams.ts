@@ -1,10 +1,7 @@
 'use server'
 
-import { revalidatePath } from 'next/cache'
-
 import { ITeam } from '@/types'
-import { db } from '@/db/db'
-import { teamFormSchema } from '@/validations/teams'
+import { createTeamInDB } from '@/services/teams'
 
 export async function createTeam(prevState: any, formData: FormData) {
 	await new Promise((resolve) => setTimeout(resolve, 500)) // loading ui
@@ -28,20 +25,7 @@ export async function createTeam(prevState: any, formData: FormData) {
 			whatsapp_group_link: rawData.whatsappGroupLink,
 		}
 
-		db.prepare(
-			`
-					INSERT INTO teams VALUES (
-						null,
-						@team_name,
-						@project,
-						@required_skills,
-						@project_timeline,
-						@description,
-						@whatsapp_group_link
-					)
-				`
-		).run(teamData)
-		revalidatePath('/teams')
+		await createTeamInDB(teamData)
 
 		return { success: true, message: 'Team created successfully!' }
 	} catch (error) {
