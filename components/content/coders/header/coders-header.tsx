@@ -1,19 +1,24 @@
-import Input from '@/components/common/ui/input'
+'use client'
+
 import styles from './coders-header.module.css'
-import { getCodersCount } from '@/services/coders'
+import SearchInput from '@/components/common/ui/search-input'
+import { useCodersContext } from '@/contexts/coders-context'
 
 export default function CodersHeader() {
+	const { searchTerm, handleSearch, codersCount, totalCount } = useCodersContext()
+
 	return (
 		<header className={styles.codersHeader}>
 			<h2>Browse Coders</h2>
 			<div>
-				<Input
-					type='text'
+				<SearchInput
 					name='coderSearch'
 					placeholder='Search by name, skills and interests...'
+					value={searchTerm}
+					onChange={handleSearch}
 				/>
 			</div>
-			<p>Found {getCodersCount()} active hackers</p>
+			<p>{`Found ${codersCount} of ${totalCount} active hackers`}</p>
 		</header>
 	)
 }

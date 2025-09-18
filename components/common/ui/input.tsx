@@ -1,3 +1,5 @@
+'use client'
+
 import { useController, type FieldValues } from 'react-hook-form'
 
 import { IInput } from '@/types'

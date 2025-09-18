@@ -14,6 +14,12 @@ export interface IInput<T extends FieldValues> {
 	info?: string
 	controllerProps: UseControllerProps<T>
 }
+export interface ISearchInput {
+	placeholder: string
+	name: string
+	value: string
+	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
 export interface ICoder extends ICoderProfile {
 	skills: string[]
 	interests: string[]
