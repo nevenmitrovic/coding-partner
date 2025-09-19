@@ -20,9 +20,8 @@ export default function Input<T extends FieldValues>({
 			<input
 				{...field}
 				value={field.value as string}
-				className='inputContainer'
+				className='inputContainer input'
 				name={name}
-				id='input'
 				type={type}
 				placeholder={placeholder}
 			/>

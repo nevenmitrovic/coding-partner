@@ -8,9 +8,8 @@ export default function SearchInput({ placeholder, name, value, onChange }: ISea
 			<input
 				value={value}
 				onChange={onChange}
-				className='inputContainer'
+				className='inputContainer input'
 				name={name}
-				id='input'
 				type='text'
 				placeholder={placeholder}
 			/>
