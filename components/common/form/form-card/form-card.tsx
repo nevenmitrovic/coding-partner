@@ -1,5 +1,4 @@
 import Input from '@/components/common/ui/input'
-import Select from '@/components/common/ui/select'
 import Textarea from '@/components/common/ui/textarea'
 import styles from './form-card.module.css'
 import { IFormCard, IFormCardField, ISkill } from '@/types'
@@ -44,7 +43,7 @@ export default function FormCard({ title, fields, control }: IFormCard) {
 		<div className={styles.formCard}>
 			<header className={styles.formCardHeader}>{title}</header>
 			<div className={styles.formCardContent}>
-				{fields.map((field) => renderField(field, control))}
+				{control && fields.map((field) => renderField(field, control))}
 			</div>
 		</div>
 	)

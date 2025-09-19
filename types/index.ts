@@ -57,7 +57,7 @@ export interface IFormCardField {
 export interface IFormCard {
 	title: string
 	fields: IFormCardField[]
-	control: Control<TeamFormSchema>
+	control?: Control<TeamFormSchema>
 }
 export interface IFormContent {
 	control: Control<TeamFormSchema>

@@ -81,3 +81,7 @@ export const TEAM_FORM_CARDS: IFormCard[] = [
 		],
 	},
 ]
+
+export const TOAST_LOADING = 'team-form-loading...'
+export const TOAST_SUCCESS = 'team-form-success'
+export const TOAST_ERROR = 'team-form-error'

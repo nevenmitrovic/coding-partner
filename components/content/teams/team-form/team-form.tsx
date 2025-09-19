@@ -11,10 +11,7 @@ import styles from './team-form.module.css'
 import { createTeam } from '@/actions/teams'
 import { teamFormSchema, type TeamFormSchema } from '@/validations/teams'
 import { useToast } from '@/contexts/toast-context'
-
-const TOAST_LOADING = 'team-form-loading...'
-const TOAST_SUCCESS = 'team-form-success'
-const TOAST_ERROR = 'team-form-error'
+import { TOAST_ERROR, TOAST_LOADING, TOAST_SUCCESS } from '@/constants'
 
 export default function TeamForm() {
 	const [state, formAction, isPending] = useActionState(createTeam, null)
