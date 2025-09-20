@@ -9,7 +9,7 @@ export const loginFormSchema = z.object({
 		.regex(emailRegex, 'Please enter a valid email address'),
 	password: z
 		.string()
-		.min(6, 'Password is required and must have minimum 6 characters')
+		.min(8, 'Password is required and must have minimum 8 characters')
 		.max(50, 'Password can have a maximum of 50 characters'),
 })
 
@@ -24,7 +24,7 @@ export const registerFormSchema = z.object({
 		.regex(emailRegex, 'Please enter a valid email address'),
 	password: z
 		.string()
-		.min(6, 'Password is required and must have minimum 6 characters')
+		.min(8, 'Password is required and must have minimum 8 characters')
 		.max(50, 'Password can have a maximum of 50 characters'),
 })
 
