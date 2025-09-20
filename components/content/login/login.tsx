@@ -9,11 +9,13 @@ import styles from './login.module.css'
 import Input from '@/components/common/ui/input'
 import Button from '@/components/common/ui/button'
 import { loginFormSchema, LoginFormSchema } from '@/validations/auth'
+import { signIn } from '@/actions/auth'
 import { useToast } from '@/contexts/toast-context'
-import { TOAST_ERROR, TOAST_LOADING, TOAST_SUCCESS } from '@/constants'
+import { TOAST_ERROR, TOAST_LOADING } from '@/constants'
+import type { ISignInResponse } from '@/types'
 
 export default function Login() {
-	const [state, formAction, isPending] = useActionState(() => {}, null)
+	const [state, formAction, isPending] = useActionState(signIn, null)
 	const form = useForm<LoginFormSchema>({
 		resolver: zodResolver(loginFormSchema),
 		defaultValues: {
@@ -49,10 +51,14 @@ export default function Login() {
 		if (isPending) {
 			showToast('Login Form submitting...', TOAST_LOADING)
 		}
-		if (state && state.success === true) {
+		if (state) {
 			hideToast(TOAST_LOADING)
-			showToast(state.message, TOAST_SUCCESS)
-			reset()
+			if (state.success) {
+				reset()
+			}
+			if (state.error) {
+				showToast(state.error, TOAST_ERROR)
+			}
 		}
 	}, [state, isPending, showToast, hideToast, reset])
 

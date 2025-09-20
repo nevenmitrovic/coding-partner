@@ -9,11 +9,12 @@ import styles from './signup.module.css'
 import Input from '@/components/common/ui/input'
 import Button from '@/components/common/ui/button'
 import { registerFormSchema, RegisterFormSchema } from '@/validations/auth'
+import { signUp } from '@/actions/auth'
 import { useToast } from '@/contexts/toast-context'
-import { TOAST_ERROR, TOAST_LOADING, TOAST_SUCCESS } from '@/constants'
+import { TOAST_ERROR, TOAST_LOADING } from '@/constants'
 
 export default function Signup() {
-	const [state, formAction, isPending] = useActionState(() => {}, null)
+	const [state, formAction, isPending] = useActionState(signUp, null)
 	const form = useForm<RegisterFormSchema>({
 		resolver: zodResolver(registerFormSchema),
 		defaultValues: {
@@ -48,12 +49,16 @@ export default function Signup() {
 
 	useEffect(() => {
 		if (isPending) {
-			showToast('Login Form submitting...', TOAST_LOADING)
+			showToast('Signup form submitting...', TOAST_LOADING)
 		}
-		if (state && state.success === true) {
+		if (state) {
 			hideToast(TOAST_LOADING)
-			showToast(state.message, TOAST_SUCCESS)
-			reset()
+			if (state.success) {
+				reset()
+			}
+			if (state.error) {
+				showToast(state.error, TOAST_ERROR)
+			}
 		}
 	}, [state, isPending, showToast, hideToast, reset])
 

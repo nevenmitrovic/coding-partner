@@ -1,10 +1,9 @@
 import { betterAuth } from 'better-auth'
 import { nextCookies } from 'better-auth/next-js'
-import Database from 'better-sqlite3'
-import { join } from 'path'
+import { db } from '@/db/db'
 
 export const auth = betterAuth({
-	database: new Database(join(process.cwd(), 'cp.db')),
+	database: db,
 	emailAndPassword: {
 		enabled: true,
 	},

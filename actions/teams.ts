@@ -3,7 +3,7 @@
 import { ITeam } from '@/types'
 import { createTeamInDB } from '@/services/teams'
 
-export async function createTeam(prevState: any, formData: FormData) {
+export async function createTeam(_prevState: any, formData: FormData) {
 	await new Promise((resolve) => setTimeout(resolve, 500)) // loading ui
 
 	try {
