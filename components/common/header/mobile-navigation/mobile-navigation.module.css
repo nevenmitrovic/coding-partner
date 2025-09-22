@@ -49,4 +49,13 @@
 		list-style: none;
 		margin: 0;
 	}
+
+	.signOut {
+		color: var(--terminal-dark-green);
+		font-size: var(--text-main-regular);
+		background-color: inherit;
+		border: none;
+		cursor: pointer;
+		padding: 8px 16px;
+	}
 }
