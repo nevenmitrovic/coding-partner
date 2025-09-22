@@ -1,0 +1,27 @@
+.teamsFooter {
+	margin-inline: auto;
+	width: 440px;
+	border-top: 1px solid var(--terminal-green);
+	padding-top: 16px;
+	font-size: var(--text-main-sm);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.teamsFooter > p {
+	line-height: 1;
+}
+.teamsFooter > p:first-child {
+	padding-right: 8px;
+	border-right: 1px solid var(--terminal-gray);
+}
+.teamsFooter > p:last-child {
+	padding-left: 8px;
+}
+
+@media (width < 769px) {
+	.teamsFooter {
+		width: 100%;
+		padding-top: 12px;
+	}
+}

@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 
 import styles from './layout.module.css'
+import TeamsFooter from '@/components/content/teams/teams-footer/teams-footer'
 
 interface TeamsLayoutProps {
 	form: ReactNode
@@ -12,6 +13,7 @@ export default function TeamsLayout({ form, teams }: TeamsLayoutProps) {
 		<main className={styles.teamsMainLayout}>
 			{form}
 			{teams}
+			<TeamsFooter />
 		</main>
 	)
 }
