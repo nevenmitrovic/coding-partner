@@ -2,6 +2,7 @@
 
 import { FormEvent, startTransition, useActionState, useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { FieldErrors, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -12,7 +13,8 @@ import { registerFormSchema, RegisterFormSchema } from '@/validations/auth'
 import { signUp } from '@/actions/auth'
 import { useToast } from '@/contexts/toast-context'
 import { TOAST_ERROR, TOAST_LOADING } from '@/constants'
-import { redirect } from 'next/navigation'
+
+import { authClient } from '@/auth/auth-client'
 
 export default function Signup() {
 	const [state, formAction, isPending] = useActionState(signUp, null)
@@ -26,6 +28,8 @@ export default function Signup() {
 	})
 	const { control, reset, handleSubmit } = form
 	const { showToast, hideToast } = useToast()
+	const router = useRouter()
+	const { refetch } = authClient.useSession()
 
 	const onSubmit = (data: RegisterFormSchema) => {
 		const formData = new FormData()
@@ -56,7 +60,8 @@ export default function Signup() {
 			hideToast(TOAST_LOADING)
 			if (state.success) {
 				reset()
-				redirect('/coders')
+				refetch()
+				router.push('/coders')
 			}
 			if (state.error) {
 				showToast(state.error, TOAST_ERROR)
