@@ -5,3 +5,12 @@
 	display: flex;
 	gap: 64px;
 }
+.signOut {
+	color: var(--terminal-dark-green);
+	font-size: var(--text-main-regular);
+	background-color: inherit;
+	border: none;
+}
+.signOut:hover {
+	cursor: pointer;
+}
