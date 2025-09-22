@@ -10,8 +10,8 @@ export default function Home() {
 			<main className={styles.codersContent}>
 				<CodersHeader />
 				<CardsContainer />
-				<CodersFooter />
 			</main>
+			<CodersFooter />
 		</CodersProvider>
 	)
 }

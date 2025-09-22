@@ -10,10 +10,12 @@ interface TeamsLayoutProps {
 
 export default function TeamsLayout({ form, teams }: TeamsLayoutProps) {
 	return (
-		<main className={styles.teamsMainLayout}>
-			{form}
-			{teams}
+		<>
+			<main className={styles.teamsMainLayout}>
+				{form}
+				{teams}
+			</main>
 			<TeamsFooter />
-		</main>
+		</>
 	)
 }
