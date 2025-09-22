@@ -12,6 +12,7 @@ import { registerFormSchema, RegisterFormSchema } from '@/validations/auth'
 import { signUp } from '@/actions/auth'
 import { useToast } from '@/contexts/toast-context'
 import { TOAST_ERROR, TOAST_LOADING } from '@/constants'
+import { redirect } from 'next/navigation'
 
 export default function Signup() {
 	const [state, formAction, isPending] = useActionState(signUp, null)
@@ -55,6 +56,7 @@ export default function Signup() {
 			hideToast(TOAST_LOADING)
 			if (state.success) {
 				reset()
+				redirect('/coders')
 			}
 			if (state.error) {
 				showToast(state.error, TOAST_ERROR)

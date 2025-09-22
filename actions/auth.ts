@@ -20,7 +20,6 @@ export async function signUp(
 				email,
 				password,
 				name,
-				callbackURL: '/',
 			},
 			asResponse: true,
 		})

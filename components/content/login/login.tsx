@@ -2,6 +2,7 @@
 
 import { FormEvent, startTransition, useActionState, useEffect } from 'react'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import { FieldErrors, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -12,7 +13,6 @@ import { loginFormSchema, LoginFormSchema } from '@/validations/auth'
 import { signIn } from '@/actions/auth'
 import { useToast } from '@/contexts/toast-context'
 import { TOAST_ERROR, TOAST_LOADING } from '@/constants'
-import type { ISignInResponse } from '@/types'
 
 export default function Login() {
 	const [state, formAction, isPending] = useActionState(signIn, null)
@@ -55,6 +55,7 @@ export default function Login() {
 			hideToast(TOAST_LOADING)
 			if (state.success) {
 				reset()
+				redirect('/coders')
 			}
 			if (state.error) {
 				showToast(state.error, TOAST_ERROR)
