@@ -20,7 +20,20 @@ export const getTeams = unstable_cache(
 		})
 		return mappedData
 	},
-	['teams'],
+	['get-teams'],
+	{
+		tags: ['teams'],
+	}
+)
+
+export const getTeamsCount = unstable_cache(
+	async () => {
+		const codersCount = db.prepare('SELECT COUNT(*) as count FROM teams').get() as {
+			count: number
+		}
+		return codersCount.count
+	},
+	['get-teams-count'],
 	{
 		tags: ['teams'],
 	}
