@@ -3,7 +3,8 @@ import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 import styles from './page.module.css'
-import ProfileHeader from '@/components/content/profile/profile-header'
+import ProfileHeader from '@/components/content/profile/profile-header/profile-header'
+import ProfileForm from '@/components/content/profile/profile-form/profile-form'
 
 export default async function ProfilePage() {
 	const session = await auth.api.getSession({
@@ -16,6 +17,7 @@ export default async function ProfilePage() {
 	return (
 		<main className={styles.profileContent}>
 			<ProfileHeader />
+			<ProfileForm />
 		</main>
 	)
 }

@@ -82,6 +82,55 @@ export const TEAM_FORM_CARDS: IFormCard[] = [
 	},
 ]
 
+export const PROFILE_FORM_CARDS: IFormCard[] = [
+	{
+		title: '> personal_info.json',
+		fields: [
+			{
+				type: 'text',
+				placeholder: 'Enter your name',
+				label: '> name:',
+				name: 'full_name',
+			},
+			{
+				type: 'text',
+				placeholder: 'e.g., 2nd year, 2024, N/A',
+				label: '> academic_year:',
+				name: 'year',
+			},
+		],
+	},
+	{
+		title: '> technical_stack.yaml',
+		fields: [
+			{
+				type: 'text',
+				placeholder: 'JavaScript, Python, React, Node.js (comma separated)',
+				label: '> skills: []',
+				name: 'skills',
+				info: '# Separate skills with commas',
+			},
+			{
+				type: 'textarea',
+				placeholder: 'Web development, AI/ML, Cybersecurity, Game dev...',
+				label: '> interests:',
+				name: 'interests',
+			},
+		],
+	},
+	{
+		title: '> contact_methods.cfg',
+		fields: [
+			{
+				type: 'text',
+				placeholder: '+91XXXXXXXXXX (optional)',
+				label: '> whatsapp_number:',
+				name: 'whatsApp',
+			},
+		],
+	},
+]
+
 export const TOAST_LOADING = 'team-form-loading...'
 export const TOAST_SUCCESS = 'team-form-success'
 export const TOAST_ERROR = 'team-form-error'
