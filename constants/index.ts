@@ -123,7 +123,7 @@ export const PROFILE_FORM_CARDS: IFormCard[] = [
 		fields: [
 			{
 				type: 'text',
-				placeholder: '+91XXXXXXXXXX (optional)',
+				placeholder: '+381XXXXXXXXX (optional)',
 				label: '> whatsapp_number:',
 				name: 'whatsApp',
 			},
