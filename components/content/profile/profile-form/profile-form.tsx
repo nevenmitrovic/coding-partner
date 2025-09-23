@@ -10,6 +10,7 @@ import FormCard from '@/components/common/form/form-card/form-card'
 import Button from '@/components/common/ui/button'
 import { profileFormSchema, ProfileFormSchema } from '@/validations/profile'
 import { useToast } from '@/contexts/toast-context'
+import FormSubmit from './form-submit/form-submit'
 
 export default function ProfileForm() {
 	const form = useForm<ProfileFormSchema>({
@@ -62,7 +63,7 @@ export default function ProfileForm() {
 			{PROFILE_FORM_CARDS.map((item) => (
 				<FormCard key={item.title} {...item} control={control} />
 			))}
-			<Button text='> save_profile --execute' type='submit' />
+			<FormSubmit />
 		</form>
 	)
 }
