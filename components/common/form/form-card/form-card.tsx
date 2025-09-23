@@ -1,11 +1,10 @@
 import Input from '@/components/common/ui/input'
 import Textarea from '@/components/common/ui/textarea'
 import styles from './form-card.module.css'
-import { IFormCard, IFormCardField, ISkill } from '@/types'
-import { Control } from 'react-hook-form'
-import { TeamFormSchema } from '@/validations/teams'
+import { IFormCard, IFormCardField } from '@/types'
+import { Control, FieldValues, type Path } from 'react-hook-form'
 
-function renderField(field: IFormCardField, control: Control<TeamFormSchema>) {
+function renderField<T extends FieldValues>(field: IFormCardField, control: Control<T>) {
 	if (field.type === 'text') {
 		return (
 			<Input
@@ -17,7 +16,7 @@ function renderField(field: IFormCardField, control: Control<TeamFormSchema>) {
 				label={field.label}
 				controllerProps={{
 					control,
-					name: field.name as keyof TeamFormSchema,
+					name: field.name as Path<T>,
 				}}
 			/>
 		)
@@ -31,19 +30,25 @@ function renderField(field: IFormCardField, control: Control<TeamFormSchema>) {
 				label={field.label}
 				controllerProps={{
 					control,
-					name: field.name as keyof TeamFormSchema,
+					name: field.name as Path<T>,
 				}}
 			/>
 		)
 	}
 }
 
-export default function FormCard({ title, fields, control }: IFormCard) {
+type FormCardProps<T extends FieldValues> = Omit<IFormCard, 'control'> & { control: Control<T> }
+
+export default function FormCard<T extends FieldValues>({
+	title,
+	fields,
+	control,
+}: FormCardProps<T>) {
 	return (
 		<div className={styles.formCard}>
 			<header className={styles.formCardHeader}>{title}</header>
 			<div className={styles.formCardContent}>
-				{control && fields.map((field) => renderField(field, control))}
+				{control && fields.map((field) => renderField<T>(field, control))}
 			</div>
 		</div>
 	)

@@ -1,7 +1,7 @@
 import * as z from 'zod'
 
 export const profileFormSchema = z.object({
-	full_name: z
+	fullName: z
 		.string()
 		.min(3, 'Name is required and can have a minimum of 3 characters')
 		.max(50, 'Name can have a maximum of 50 characters'),
