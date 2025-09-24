@@ -31,9 +31,11 @@ export default function ProfileCard({
 			<div className={styles.profileInfo}>
 				<SkillsList list={skills} />
 				<InterestsList list={interests} />
-				<Link href={getWatsAppMe(whatsApp)}>
-					<Button text='> WatsApp' type='button' />
-				</Link>
+				{whatsApp && (
+					<Link href={getWatsAppMe(whatsApp)}>
+						<Button text='> WatsApp' type='button' />
+					</Link>
+				)}
 			</div>
 			<div className={styles.profileStatus}>
 				<div />
