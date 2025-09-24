@@ -21,7 +21,7 @@ export default function ProfileCard({
 			<header>
 				<div>
 					<h4>{full_name}</h4>
-					<p>#{id}</p>
+					<p>#{id.slice(0, 3)}</p>
 				</div>
 				<div>
 					<p>Year: {year}</p>

@@ -1,6 +1,6 @@
 import { db } from '@/db/db'
 import { ICoder } from '@/types'
-import { unstable_cache } from 'next/cache'
+import { revalidateTag, unstable_cache } from 'next/cache'
 
 export const getCoders = unstable_cache(
 	async (): Promise<ICoder[]> => {
@@ -76,3 +76,30 @@ export const getCodersCount = unstable_cache(
 		tags: ['coders'],
 	}
 )
+
+export const createCoder = async (id: string, fullName: string) => {
+	const res = db.prepare('INSERT INTO coders (id, full_name) VALUES (?, ?)').run(id, fullName)
+	revalidateTag('coders')
+	return res
+}
+
+export const updateCoder = async (
+	id: string,
+	fullName?: string,
+	year?: string,
+	active?: string,
+	whatsApp?: string
+) => {
+	const res = db
+		.prepare(
+			`UPDATE coders SET 
+            full_name = COALESCE(?, full_name),
+            year = COALESCE(?, year),
+            active = COALESCE(?, active),
+            whatsApp = COALESCE(?, whatsApp)
+        	WHERE id = ?`
+		)
+		.run(fullName, year, active, whatsApp, id)
+	revalidateTag('coders')
+	return res
+}

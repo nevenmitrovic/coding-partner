@@ -1,22 +1,16 @@
 import sql from 'better-sqlite3'
-import {
-	coderProfiles,
-	skillsData,
-	interestsData,
-	coderSkillsData,
-	coderInterestsData,
-	teamsData,
-} from '@/mocks'
+import { teamsData } from '@/mocks'
 
-const db = sql('cp.db')
+const db = sql('coding_partner.db')
 
 db.exec(`
     CREATE TABLE IF NOT EXISTS coders (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        id TEXT PRIMARY KEY,
         full_name TEXT NOT NULL,
-        year TEXT NOT NULL,
-        active TEXT NOT NULL,
-        whatsApp TEXT
+        year TEXT,
+        active TEXT,
+        whatsApp TEXT,
+        FOREIGN KEY (id) REFERENCES user(id) ON DELETE CASCADE
     );
 
     CREATE TABLE IF NOT EXISTS skills (
@@ -105,115 +99,115 @@ db.exec(`
 `)
 
 // INITIALIZE CODERS TABLE
-const codersCount = db.prepare('SELECT COUNT(*) as count FROM coders').get() as { count: number }
+// const codersCount = db.prepare('SELECT COUNT(*) as count FROM coders').get() as { count: number }
 
-if (codersCount.count === 0) {
-	const stmt = db.prepare(`
-        INSERT INTO coders VALUES (
-            null,
-            @full_name,
-            @year,
-            @active,
-            @whatsApp
-        )
-    `)
+// if (codersCount.count === 0) {
+// 	const stmt = db.prepare(`
+//         INSERT INTO coders VALUES (
+//             null,
+//             @full_name,
+//             @year,
+//             @active,
+//             @whatsApp
+//         )
+//     `)
 
-	for (const coder of coderProfiles) {
-		stmt.run(coder)
-	}
-}
+// 	for (const coder of coderProfiles) {
+// 		stmt.run(coder)
+// 	}
+// }
 
-// INITIALIZE SKILLS TABLE
-const skillsCount = db.prepare('SELECT COUNT(*) as count FROM skills').get() as { count: number }
+// // INITIALIZE SKILLS TABLE
+// const skillsCount = db.prepare('SELECT COUNT(*) as count FROM skills').get() as { count: number }
 
-if (skillsCount.count === 0) {
-	const skillsStmt = db.prepare(`
-        INSERT INTO skills VALUES (
-            null,
-            @name
-        )
-    `)
+// if (skillsCount.count === 0) {
+// 	const skillsStmt = db.prepare(`
+//         INSERT INTO skills VALUES (
+//             null,
+//             @name
+//         )
+//     `)
 
-	for (const skill of skillsData) {
-		skillsStmt.run(skill)
-	}
-}
+// 	for (const skill of skillsData) {
+// 		skillsStmt.run(skill)
+// 	}
+// }
 
-// INITIALIZE INTERESTS TABLE
-const interestsCount = db.prepare('SELECT COUNT(*) as count FROM interests').get() as {
-	count: number
-}
+// // INITIALIZE INTERESTS TABLE
+// const interestsCount = db.prepare('SELECT COUNT(*) as count FROM interests').get() as {
+// 	count: number
+// }
 
-if (interestsCount.count === 0) {
-	const interestsStmt = db.prepare(`
-      INSERT INTO interests VALUES (
-         null,
-         @name
-      )
-   `)
+// if (interestsCount.count === 0) {
+// 	const interestsStmt = db.prepare(`
+//       INSERT INTO interests VALUES (
+//          null,
+//          @name
+//       )
+//    `)
 
-	for (const interest of interestsData) {
-		interestsStmt.run(interest)
-	}
-}
+// 	for (const interest of interestsData) {
+// 		interestsStmt.run(interest)
+// 	}
+// }
 
-// INITIALIZE CODER SKILLS TABLE
-const coderSkillsCount = db.prepare('SELECT COUNT(*) as count FROM coder_skills').get() as {
-	count: number
-}
+// // INITIALIZE CODER SKILLS TABLE
+// const coderSkillsCount = db.prepare('SELECT COUNT(*) as count FROM coder_skills').get() as {
+// 	count: number
+// }
 
-if (coderSkillsCount.count === 0) {
-	const coderSkillsStmt = db.prepare(`
-        INSERT INTO coder_skills VALUES (
-            null,
-            @coder_id,
-            @skill_id
-        )
-    `)
+// if (coderSkillsCount.count === 0) {
+// 	const coderSkillsStmt = db.prepare(`
+//         INSERT INTO coder_skills VALUES (
+//             null,
+//             @coder_id,
+//             @skill_id
+//         )
+//     `)
 
-	for (const coderSkill of coderSkillsData) {
-		coderSkillsStmt.run(coderSkill)
-	}
-}
+// 	for (const coderSkill of coderSkillsData) {
+// 		coderSkillsStmt.run(coderSkill)
+// 	}
+// }
 
-// INITIALIZE CODER INTERESTS TABLE
-const coderInterestsCount = db.prepare('SELECT COUNT(*) as count FROM coder_interests').get() as {
-	count: number
-}
+// // INITIALIZE CODER INTERESTS TABLE
+// const coderInterestsCount = db.prepare('SELECT COUNT(*) as count FROM coder_interests').get() as {
+// 	count: number
+// }
 
-if (coderInterestsCount.count === 0) {
-	const coderInterestsStmt = db.prepare(`
-        INSERT INTO coder_interests VALUES (
-            null,
-            @coder_id,
-            @interest_id
-        )
-    `)
+// if (coderInterestsCount.count === 0) {
+// 	const coderInterestsStmt = db.prepare(`
+//         INSERT INTO coder_interests VALUES (
+//             null,
+//             @coder_id,
+//             @interest_id
+//         )
+//     `)
 
-	for (const coderInterest of coderInterestsData) {
-		coderInterestsStmt.run(coderInterest)
-	}
-}
+// 	for (const coderInterest of coderInterestsData) {
+// 		coderInterestsStmt.run(coderInterest)
+// 	}
+// }
 
 // INITIALIZE TEAM TABLE
-const teamsCount = db.prepare('SELECT COUNT(*) as count from teams').get() as { count: number }
+// const teamsCount = db.prepare('SELECT COUNT(*) as count from teams').get() as { count: number }
 
-if (teamsCount.count === 0) {
-	const teamsStmt = db.prepare(`
-        INSERT INTO teams VALUES (
-            null,
-            @team_name,
-            @project,
-            @required_skills,
-            @project_timeline,
-            @description,
-            @whatsapp_group_link
-        )    
-    `)
+// if (teamsCount.count === 0) {
+// 	const teamsStmt = db.prepare(`
+//         INSERT INTO teams VALUES (
+//             null,
+//             @team_name,
+//             @project,
+//             @required_skills,
+//             @project_timeline,
+//             @description,
+//             @whatsapp_group_link
+//         )
+//     `)
 
-	for (const team of teamsData) {
-		teamsStmt.run(team)
-	}
-}
+// 	for (const team of teamsData) {
+// 		teamsStmt.run(team)
+// 	}
+// }
 
 export { db }

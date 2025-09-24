@@ -3,6 +3,7 @@
 import { headers } from 'next/headers'
 
 import { auth } from '@/auth/auth'
+import { createCoder } from '@/services/coders'
 
 export async function signUp(
 	_prevState: any,
@@ -25,6 +26,13 @@ export async function signUp(
 		})
 
 		if (res.ok) {
+			const data = await res.json()
+			const userId = data?.user?.id
+
+			if (userId) {
+				await createCoder(userId, name)
+			}
+
 			return { success: true }
 		} else {
 			const data = await res.json().catch(() => ({}))
