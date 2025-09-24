@@ -20,7 +20,7 @@ export interface ISearchInput {
 	value: string
 	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
-export interface ICoder extends ICoderProfile {
+export interface ICoder extends Omit<ICoderProfile, 'skills' | 'interests'> {
 	skills: string[]
 	interests: string[]
 }
@@ -30,6 +30,8 @@ export interface ICoderProfile {
 	year: string
 	active: string
 	whatsApp: string
+	skills: string
+	interests: string
 }
 // export interface ISkill {
 // 	id: number

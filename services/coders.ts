@@ -83,12 +83,14 @@ export const createCoder = async (id: string, fullName: string) => {
 	return res
 }
 
-export const updateCoder = async (
+export const updateCoderInDB = async (
 	id: string,
 	fullName?: string,
 	year?: string,
 	active?: string,
-	whatsApp?: string
+	whatsApp?: string,
+	interests?: string,
+	skills?: string
 ) => {
 	const res = db
 		.prepare(
@@ -96,10 +98,12 @@ export const updateCoder = async (
             full_name = COALESCE(?, full_name),
             year = COALESCE(?, year),
             active = COALESCE(?, active),
-            whatsApp = COALESCE(?, whatsApp)
+            whatsApp = COALESCE(?, whatsApp),
+			interests = COALESCE(?, interests),
+			skills = COALESCE(?, skills)
         	WHERE id = ?`
 		)
-		.run(fullName, year, active, whatsApp, id)
+		.run(fullName, year, active, whatsApp, interests, skills, id)
 	revalidateTag('coders')
 	return res
 }

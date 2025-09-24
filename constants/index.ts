@@ -90,7 +90,7 @@ export const PROFILE_FORM_CARDS: IFormCard[] = [
 				type: 'text',
 				placeholder: 'Enter your name',
 				label: '> name:',
-				name: 'full_name',
+				name: 'fullName',
 			},
 			{
 				type: 'text',

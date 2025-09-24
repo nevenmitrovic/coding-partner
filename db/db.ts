@@ -5,40 +5,13 @@ const db = sql('coding_partner.db')
 
 db.exec(`
     CREATE TABLE IF NOT EXISTS coders (
-        id TEXT PRIMARY KEY,
+        id TEXT PRIMARY KEY REFERENCES user(id) ON DELETE CASCADE,
         full_name TEXT NOT NULL,
         year TEXT,
         active TEXT,
         whatsApp TEXT,
-        FOREIGN KEY (id) REFERENCES user(id) ON DELETE CASCADE
-    );
-
-    CREATE TABLE IF NOT EXISTS skills (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL UNIQUE
-    );
-
-    CREATE TABLE IF NOT EXISTS interests (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL UNIQUE
-    );
-
-    CREATE TABLE IF NOT EXISTS coder_skills (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        coder_id INTEGER NOT NULL,
-        skill_id INTEGER NOT NULL,
-        FOREIGN KEY (coder_id) REFERENCES coders(id) ON DELETE CASCADE,
-        FOREIGN KEY (skill_id) REFERENCES skills(id) ON DELETE CASCADE,
-        UNIQUE(coder_id, skill_id)
-    );
-
-    CREATE TABLE IF NOT EXISTS coder_interests (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        coder_id INTEGER NOT NULL,
-        interest_id INTEGER NOT NULL,
-        FOREIGN KEY (coder_id) REFERENCES coders(id) ON DELETE CASCADE,
-        FOREIGN KEY (interest_id) REFERENCES interests(id) ON DELETE CASCADE,
-        UNIQUE(coder_id, interest_id)
+        interests TEXT,
+        skills TEXT
     );
 
     CREATE TABLE IF NOT EXISTS teams (
