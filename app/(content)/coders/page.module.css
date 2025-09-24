@@ -5,6 +5,7 @@
 	flex-direction: column;
 	gap: 48px;
 	padding-block: 60px;
+	min-height: calc((100vh)- (114.8px));
 }
 .cardsContainer {
 	display: grid;
@@ -19,6 +20,7 @@
 		gap: 20px;
 		padding-block: 28px;
 		padding-inline: 16px;
+		min-height: calc((100vh)- (94.64px));
 	}
 	.cardsContainer {
 		display: grid;
